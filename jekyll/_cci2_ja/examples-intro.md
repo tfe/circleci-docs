@@ -8,7 +8,7 @@ order: 1
 ---
 
 
-CircleCI を使用して、Linux、Android、iOS 上で動作するアプリケーションをビルド、テスト、およびデプロイすることができます。 以下のスニペットでは、各プラットフォーム用にジョブの設定をカスタマイズする方法に重点を置いて解説しています。 1つの [`.circleci/config.yml`]({{ site.baseurl }}/ja/2.0/configuration-reference/) ファイルで、複数のプラットフォーム上で動作するジョブを設定することも可能です。
+CircleCI を使用して、Linux、Android、iOS 上で動作するアプリケーションをビルド、テスト、およびデプロイすることができます。 以下のスニペットでは、各プラットフォーム用にジョブの設定をカスタマイズする方法に重点を置いて解説しています。 1つの [`.circleci/config.yml`]({{ site.baseurl }}/2.0/configuration-reference/) ファイルで、複数のプラットフォーム上で動作するジョブを設定することも可能です。
 
 ## Linux と Docker
 
@@ -101,4 +101,4 @@ jobs:
 
 ## 関連項目
 
-上記のサンプルで使用されている Executor タイプの詳細については、[こちら]({{ site.baseurl }}/ja/2.0/executor-types/)を参照してください。
+上記のサンプルで使用されている Executor タイプの詳細については、[こちら]({{ site.baseurl }}/2.0/executor-types/)を参照してください。

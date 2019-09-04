@@ -20,7 +20,7 @@ CircleCI の従業員がユーザーの許諾を得ずにコードを見るこ�
 コードを確認させていただく
 場合があります。
 
-詳しくは CircleCI の[セキュリティポリシー]({{ site.baseurl }}/ja/2.0/security/)をご覧ください。
+詳しくは CircleCI の[セキュリティポリシー]({{ site.baseurl }}/2.0/security/)をご覧ください。
 
 ## 開発環境の移行
 
@@ -32,7 +32,7 @@ CircleCI の従業員がユーザーの許諾を得ずにコードを見るこ�
 
 ### Jenkins から CircleCI 2.0 へ移行するには？
 {:.no_toc}
-[Hello World]({{ site.baseurl }}/ja/2.0/hello-world/) を例を挙げると、下記のように Jenkins の `steps` に記述している内容をそのまま `steps:` にコピー＆ペーストすることになります。
+[Hello World]({{ site.baseurl }}/2.0/hello-world/) を例を挙げると、下記のように Jenkins の `steps` に記述している内容をそのまま `steps:` にコピー＆ペーストすることになります。
 
 ```yaml
     steps:
@@ -43,7 +43,7 @@ CircleCI の従業員がユーザーの許諾を得ずにコードを見るこ�
             echo "たいていは Jenkins の Execute Shell の内容をコピー＆ペーストするだけです"
 ```
 
-Jenkins と CircleCI の仕組みの違いについては「[Jenkins からの移行]({{ site.baseurl }}/ja/2.0/migrating-from-jenkins/)」をご覧ください。
+Jenkins と CircleCI の仕組みの違いについては「[Jenkins からの移行]({{ site.baseurl }}/2.0/migrating-from-jenkins/)」をご覧ください。
 
 ### CircleCI 2.0 では 1.0 にあった inference コマンドを実行してくれますか？
 {:.no_toc}
@@ -63,7 +63,7 @@ CircleCI 2.0 はプロジェクトの内容から推測して変換するよう�
 
 ### CircleCI 2.0 はオンプレミスでの利用も可能ですか？
 {:.no_toc}
-可能です。CircleCI 2.0 はオンプレミス環境を必要とされるエンタープライズにもご利用いただけます。詳しいインストール手順については「[管理者向け概要]({{ site.baseurl }}/ja/2.0/overview)」をご覧ください。
+可能です。CircleCI 2.0 はオンプレミス環境を必要とされるエンタープライズにもご利用いただけます。詳しいインストール手順については「[管理者向け概要]({{ site.baseurl }}/2.0/overview)」をご覧ください。
 
 ### CircleCI のホスティングの種類は？
 {:.no_toc}
@@ -86,7 +86,7 @@ CircleCI の Workflows タブで
 確認してみてください。
 たいていの場合
 は `config.yml` ファイル内での文法エラーが原因です。
-詳しくは「[YAML の書き方]({{ site.baseurl }}/ja/2.0/writing-yaml/)」をご確認ください。
+詳しくは「[YAML の書き方]({{ site.baseurl }}/2.0/writing-yaml/)」をご確認ください。
 
 `config.yml` の文法エラーをチェックして、
 それでもなお解決しないときは「[ナレッジベース](https://support.circleci.com/hc/ja)」で検索してみてください。
@@ -139,7 +139,7 @@ my-user/couchdb:1.6.1
 
 ### Docker イメージのバージョンを指定するときのベストな方法は？
 {:.no_toc}
-Docker イメージを指定する際に、`latest` タグを付け **ない** のが正しい方法です。もしくは、特定のバージョンやタグを付けるのも良い方法です。ベースとなるイメージのディストリビューションに変更があったとき、イメージが変更されないようにしてアップストリームにコンテナへの影響を防ぐには、例えば `circleci/ruby:2.4-jessie-node` のように指定します。`circleci/ruby:2.4` とだけ指定した場合は、`jessie` から `stretch` への予期しない変更による影響を受ける可能性があります。他の応用例を知りたいときは、「Executor タイプの選び方」の[Docker イメージ活用のヒント]({{ site.baseurl }}/ja/2.0/executor-types/#docker-イメージ活用のヒント)や、「CircleCI のビルド済み Docker イメージ」の[ビルド済みイメージの活用方法]({{ site.baseurl }}/2.0/circleci-images/#best-practices)を参照してください。
+Docker イメージを指定する際に、`latest` タグを付け **ない** のが正しい方法です。もしくは、特定のバージョンやタグを付けるのも良い方法です。ベースとなるイメージのディストリビューションに変更があったとき、イメージが変更されないようにしてアップストリームにコンテナへの影響を防ぐには、例えば `circleci/ruby:2.4-jessie-node` のように指定します。`circleci/ruby:2.4` とだけ指定した場合は、`jessie` から `stretch` への予期しない変更による影響を受ける可能性があります。他の応用例を知りたいときは、「Executor タイプの選び方」の[Docker イメージ活用のヒント]({{ site.baseurl }}/2.0/executor-types/#docker-イメージ活用のヒント)や、「CircleCI のビルド済み Docker イメージ」の[ビルド済みイメージの活用方法]({{ site.baseurl }}/2.0/circleci-images/#best-practices)を参照してください。
 
 ### Docker イメージでタイムゾーンを設定する方法は？
 {:.no_toc}
@@ -169,15 +169,15 @@ jobs:
 
 ### Workflows のなかで API は使えますか？
 {:.no_toc}
-使えます。利用方法や API エンドポイントの URL については「[ビルド処理の有効化]({{ site.baseurl }}/ja/2.0/build-processing/)」をご覧ください。
+使えます。利用方法や API エンドポイントの URL については「[ビルド処理の有効化]({{ site.baseurl }}/2.0/build-processing/)」をご覧ください。
 
 ### Workflows でビルドの「自動キャンセル」はできますか？
 {:.no_toc}
-可能です。「[ビルドのスキップ・キャンセル]({{ site.baseurl }}/ja/2.0/skip-build/)」で設定手順をご確認ください。
+可能です。「[ビルドのスキップ・キャンセル]({{ site.baseurl }}/2.0/skip-build/)」で設定手順をご確認ください。
 
 ### テスト結果を保存する `store_test_results` を Workflows 内で使えますか？
 {:.no_toc}
-テスト結果のデータを [Test Summary] というセクションに記録するのに、`store_test_results` が使えます。また、データを[時系列順に分割]({{ site.baseurl }}/ja/2.0/parallelism-faster-jobs/#splitting-by-timings-data)する際にも使えます。時系列のテストデータは CircleCI 2.0 の Workflows より利用できるようになったもので、同一名称のジョブで使っているデータは 50 ビルド分さかのぼることができます。
+テスト結果のデータを [Test Summary] というセクションに記録するのに、`store_test_results` が使えます。また、データを[時系列順に分割]({{ site.baseurl }}/2.0/parallelism-faster-jobs/#splitting-by-timings-data)する際にも使えます。時系列のテストデータは CircleCI 2.0 の Workflows より利用できるようになったもので、同一名称のジョブで使っているデータは 50 ビルド分さかのぼることができます。
 
 ### CircleCI 1.0 で Workflows を使うことはできますか？
  {:.no_toc}
@@ -185,7 +185,7 @@ Workflows は CircleCI 2.0 固有の機能です。Workflows を利用するに�
 
 ### オンプレミス環境にインストールした CircleCI でも Workflows は使えますか？
 {:.no_toc}
-もちろん使えます。Workflows は CircleCI 2.0 の 1 機能としてエンタープライズ向けのオンプレミス環境でもご利用いただけます。CircleCI のインストール手順などについては「[管理者向け概要]({{ site.baseurl }}/ja/2.0/overview)」を参照してください。
+もちろん使えます。Workflows は CircleCI 2.0 の 1 機能としてエンタープライズ向けのオンプレミス環境でもご利用いただけます。CircleCI のインストール手順などについては「[管理者向け概要]({{ site.baseurl }}/2.0/overview)」を参照してください。
 
 ### 同時に実行できるジョブの数はいくつですか？
 {:.no_toc}
@@ -316,7 +316,7 @@ Performance プランでは、クレジットの残高が 5% になると、10% 
 
 ### テスト時に IPv6 は利用できますか？
 {:.no_toc}
-IPv6 によるローカル通信のテストでは [machine Executor]({{ site.baseurl }}/ja/2.0/executor-types) が活用できます。残念ながら、WAN における IPv6 通信はサポートしていません。CircleCI 自体が使用しているクラウドサービスの全てが IPv6 をサポートしているわけではないためです。
+IPv6 によるローカル通信のテストでは [machine Executor]({{ site.baseurl }}/2.0/executor-types) が活用できます。残念ながら、WAN における IPv6 通信はサポートしていません。CircleCI 自体が使用しているクラウドサービスの全てが IPv6 をサポートしているわけではないためです。
 
 machine Executor で実行しているホストは、`eth0` や `lo` といったネットワークインターフェースに対して IPv6 アドレスを割り当てられます。
 
@@ -346,9 +346,9 @@ Docker に IPv6 アドレスを割り当てる手法はいくつかあります�
 {:.no_toc}
 - **Linux :** CircleCI はほとんどの Linux アプリケーションのビルドが可能な高い柔軟性をもっています。Web アプリケーションはもちろん、それ以外のビルドにも利用できます。
 
-- **Android :** 詳細は「[言語別ガイド : Android]({{ site.baseurl }}/ja/2.0/language-android/)」をご覧ください。
+- **Android :** 詳細は「[言語別ガイド : Android]({{ site.baseurl }}/2.0/language-android/)」をご覧ください。
 
-- **iOS :** 「[iOS プロジェクト チュートリアル]({{ site.baseurl }}/ja/2.0/ios-tutorial)」でビルド方法を確認できます。
+- **iOS :** 「[iOS プロジェクト チュートリアル]({{ site.baseurl }}/2.0/ios-tutorial)」でビルド方法を確認できます。
 
 - **Windows :** Windows アプリケーションのビルドとテストは現在サポートしていません。
 

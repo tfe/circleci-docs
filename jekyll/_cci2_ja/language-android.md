@@ -61,12 +61,12 @@ jobs:
       - run:
           name: テストを実行
           command: ./gradlew lint test
-      - store_artifacts: # アーティファクト (https://circleci.com/docs/ja/2.0/artifacts/) に表示するため
+      - store_artifacts: # アーティファクト (https://circleci.com/ja/docs/2.0/artifacts/) に表示するため
           path: app/build/reports
           destination: reports
-      - store_test_results: # テストサマリー (https://circleci.com/docs/ja/2.0/collect-test-data/) に表示するため
+      - store_test_results: # テストサマリー (https://circleci.com/ja/docs/2.0/collect-test-data/) に表示するため
           path: app/build/test-results
-      # デプロイ例については https://circleci.com/docs/ja/2.0/deployment-integrations/ を参照してください
+      # デプロイ例については https://circleci.com/ja/docs/2.0/deployment-integrations/ を参照してください
 ```
 
 {% endraw %}
@@ -132,7 +132,7 @@ CircleCI Android イメージは、公式の [`openjdk:8-jdk`](https://hub.docke
 
 CircleCI では、[Android イメージの GitHub リポジトリ](https://github.com/circleci/circleci-images/tree/master/android)へのご協力をお待ちしております。 CircleCI の目標は、必要なツールの*ほとんど*を含む基本イメージを提供することです。必要となるであろう*すべて*のツールの提供は計画されていません。
 
-イメージをカスタマイズするには、`circleci/android` イメージ`から`ビルドされる Dockerfile を作成します。 手順については、「[カスタムビルドの Docker イメージの使用]({{ site.baseurl }}/ja/2.0/custom-images/)」を参照してください。
+イメージをカスタマイズするには、`circleci/android` イメージ`から`ビルドされる Dockerfile を作成します。 手順については、「[カスタムビルドの Docker イメージの使用]({{ site.baseurl }}/2.0/custom-images/)」を参照してください。
 
 ### React Native プロジェクト
 
@@ -146,9 +146,9 @@ CircleCI で Firebase Test Lab を使用するには、最初に以下の手順�
 
 1. **Firebase プロジェクトを作成する：**[Firebase のドキュメント](https://firebase.google.com/docs/test-lab/android/command-line#create_a_firebase_project)の手順に従ってください。
 
-2. **Google Cloud SDK をインストールおよび承認する：**「[Google Cloud SDK の承認]({{ site.baseurl }}/ja/2.0/google-auth/)」の手順に従ってください。
+2. **Google Cloud SDK をインストールおよび承認する：**「[Google Cloud SDK の承認]({{ site.baseurl }}/2.0/google-auth/)」の手順に従ってください。
 
-    **メモ：**`google/cloud-sdk` の代わりに、[Android コンビニエンスイメージ]({{ site.baseurl }}/ja/2.0/circleci-images/#android)の使用を検討してください。このイメージには、`gcloud` と Android 用のツールが含まれています。
+    **メモ：**`google/cloud-sdk` の代わりに、[Android コンビニエンスイメージ]({{ site.baseurl }}/2.0/circleci-images/#android)の使用を検討してください。このイメージには、`gcloud` と Android 用のツールが含まれています。
 
 3. **必要な API を有効にする：**作成したサービスアカウントを使用して Google にログインし、[Google Developers Console の API ライブラリページ](https://console.developers.google.com/apis/library)に移動したら、 コンソール上部の検索ボックスで **Google Cloud Testing API** と **Cloud Tool Results API** をそれぞれ検索し、**[有効にする]** をクリックします。
 
@@ -202,13 +202,13 @@ jobs:
 
 ## デプロイ
 
-デプロイターゲットの設定例については、「[デプロイの設定]({{ site.baseurl }}/ja/2.0/deployment-integrations/)」を参照してください。
+デプロイターゲットの設定例については、「[デプロイの設定]({{ site.baseurl }}/2.0/deployment-integrations/)」を参照してください。
 
 ## トラブルシューティング
 
 ### メモリ不足エラーへの対処
 
-ビルド中にメモリ不足 (OOM) エラーが発生することがあります。 JVM のメモリ使用をカスタマイズする基本的な方法については、「[Java メモリエラーの回避とデバッグ]({{ site.baseurl }}/ja/2.0/java-oom/)」を参照してください。
+ビルド中にメモリ不足 (OOM) エラーが発生することがあります。 JVM のメモリ使用をカスタマイズする基本的な方法については、「[Java メモリエラーの回避とデバッグ]({{ site.baseurl }}/2.0/java-oom/)」を参照してください。
 
 テストに [Robolectric](http://robolectric.org/) を使用している場合は、Gradle のメモリ使用を微調整する必要があります。 Gradle VM を複数のテストにフォークする場合、VM は事前にカスタマイズされた JVM メモリパラメーターを受け取りません。 `build.gradle` ファイルで Gradle にテストのための JVM メモリパラメーターを提供する必要があります。
 

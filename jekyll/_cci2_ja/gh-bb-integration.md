@@ -24,12 +24,12 @@ CircleCI ビルドは、デフォルトでフックをプッシュします。 �
 
 GitHub または Bitbucket で Web フックを編集して、ビルドをトリガーするイベントを制限できます。 Web フックの設定を編集することで、CircleCI に送信されるフックを変更できますが、ビルドをトリガーするフックの種類は変更されません。 CircleCI は、プッシュフックを必ずビルドし、(設定によっては) PR フックでもビルドを行います。ただし、Web フックの設定からプッシュフックを削除すると、ビルドを行いません。 詳細については、[GitHub の「Edit a Hook (フックを編集する)」](https://developer.github.com/v3/repos/hooks/#edit-a-hook)または [Atlassian の「Manage Webhooks (Web フックを管理する)」](https://confluence.atlassian.com/bitbucket/manage-webhooks-735643732.html)を参照してください。
 
-タグプッシュのビルド方法については、「[Workflows におけるコンテキストとフィルターの使い方]({{ site.baseurl }}/ja/2.0/workflows/#workflows-におけるコンテキストとフィルターの使い方)」を参照してください。
+タグプッシュのビルド方法については、「[Workflows におけるコンテキストとフィルターの使い方]({{ site.baseurl }}/2.0/workflows/#workflows-におけるコンテキストとフィルターの使い方)」を参照してください。
 
 ### .circleci/config.yml ファイルの追加
 {:.no_toc}
 
-[`.circleci/config.yml`]({{ site.baseurl }}/ja/2.0/configuration-reference/) ファイルを作成して GitHub または Bitbucket リポジトリにコミットすると、CircleCI は直ちにユーザーコードをチェックアウトし、設定されているテストがあればそれを使用して、最初のジョブを実行します。 たとえば、Postgres の仕様と機能を使用する Rails プロジェクトで作業している場合、ジョブ実行ステップの設定は以下のようになります。
+[`.circleci/config.yml`]({{ site.baseurl }}/2.0/configuration-reference/) ファイルを作成して GitHub または Bitbucket リポジトリにコミットすると、CircleCI は直ちにユーザーコードをチェックアウトし、設定されているテストがあればそれを使用して、最初のジョブを実行します。 たとえば、Postgres の仕様と機能を使用する Rails プロジェクトで作業している場合、ジョブ実行ステップの設定は以下のようになります。
 
 ```yaml
 jobs:
@@ -54,7 +54,7 @@ CircleCI は、毎回クリーンなコンテナでテストを実行します�
 
 ## プロジェクトで追加のプライベートリポジトリのチェックアウトを有効にする
 
-テストプロセスが複数のリポジトリを参照する場合、各デプロイキーは *1つ*のリポジトリに対してのみ有効であるのに対して、GitHub ユーザーキーは、ユーザーの*すべて*の GitHub リポジトリに対してアクセス権を持つため、CircleCI はデプロイキーの他に GitHub ユーザーキーを必要とします。 詳細については、「[CircleCI に SSH 鍵を登録する]({{ site.baseurl }}/ja/2.0/add-ssh-key)」を参照してください。
+テストプロセスが複数のリポジトリを参照する場合、各デプロイキーは *1つ*のリポジトリに対してのみ有効であるのに対して、GitHub ユーザーキーは、ユーザーの*すべて*の GitHub リポジトリに対してアクセス権を持つため、CircleCI はデプロイキーの他に GitHub ユーザーキーを必要とします。 詳細については、「[CircleCI に SSH 鍵を登録する]({{ site.baseurl }}/2.0/add-ssh-key)」を参照してください。
 
 プロジェクトの **[Project Settings (プロジェクト設定)] > [Checkout SSH keys (SSH キーをチェックアウト)]** ページで、CircleCI に渡す GitHub のユーザーキーを指定します。 CircleCI は、この新しい SSH 鍵を作成し、それを GitHub のユーザーアカウントに関連付けて、ユーザーのすべてのリポジトリにアクセスできるようにします。
 

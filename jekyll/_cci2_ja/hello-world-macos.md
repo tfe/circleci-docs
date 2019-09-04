@@ -7,7 +7,7 @@ categories: [getting-started]
 order: 4
 ---
 
-ここでは、CircleCI の **macOS ビルド環境**で継続的インテグレーションを開始する方法について説明します。 CircleCI の基本的な操作について確認したい場合は、[入門ガイド]({{ site.baseurl }}/ja/2.0/getting-started)を参照することをお勧めします。
+ここでは、CircleCI の **macOS ビルド環境**で継続的インテグレーションを開始する方法について説明します。 CircleCI の基本的な操作について確認したい場合は、[入門ガイド]({{ site.baseurl }}/2.0/getting-started)を参照することをお勧めします。
 
 ## 前提条件
 
@@ -58,7 +58,7 @@ jobs: # 1回の実行の基本作業単位
           # Xcode のビルド出力を圧縮して、アーティファクトとして格納できるようにします
           name: 保存のためにアプリを圧縮
           command: zip -r app.zip build/Release/circleci-demo-macos.app
-      - store_artifacts: # このビルド出力を保存します  (詳細については https://circleci.com/docs/ja/2.0/artifacts/ を参照)
+      - store_artifacts: # このビルド出力を保存します  (詳細については https://circleci.com/ja/docs/2.0/artifacts/ を参照)
           path: app.zip
           destination: app
 ```
@@ -67,13 +67,13 @@ jobs: # 1回の実行の基本作業単位
 
 macOS でのビルドの基礎について説明しているため、上記のサンプルの `config.yml` には以下の内容が含まれています。
 
-- 使用する [`executor`]({{ site.baseurl }}/ja/2.0/configuration-reference/#docker--machine--macosexecutor) の選択
-- [`checkout`]({{ site.baseurl }}/ja/2.0/configuration-reference/#checkout) キーによるコードのプル
+- 使用する [`executor`]({{ site.baseurl }}/2.0/configuration-reference/#docker--machine--macosexecutor) の選択
+- [`checkout`]({{ site.baseurl }}/2.0/configuration-reference/#checkout) キーによるコードのプル
 - Xcode でのテストの実行
 - アプリケーションのビルド
 - アプリケーションの圧縮と [`store_artifacts`]({{site.baseurl }}/2.0/configuration-reference/#store_artifacts) キーによる保存
 
-`config.yml` ファイルの詳細については、[設定リファレンスガイド]({{site.baseurl}}/ja/2.0/configuration-reference/)を参照してください。
+`config.yml` ファイルの詳細については、[設定リファレンスガイド]({{site.baseurl}}/2.0/configuration-reference/)を参照してください。
 
 ## 次のステップ
 
@@ -85,8 +85,8 @@ macOS Executor は iOS アプリケーションのテストとビルドに広く
 
 また、CircleCI の機能については、以下のドキュメントを確認してください。
 
-- 2.0 設定の概要、および `.circleci/config.yml` ファイルにおけるトップレベルキーの階層については「[コンセプト]({{ site.baseurl }}/ja/2.0/concepts/)」を参照してください。
+- 2.0 設定の概要、および `.circleci/config.yml` ファイルにおけるトップレベルキーの階層については「[コンセプト]({{ site.baseurl }}/2.0/concepts/)」を参照してください。
 
-- 並列実行、順次実行、スケジュール実行、手動承認のワークフローによるジョブを組織化する例については「[ジョブの実行を Workflow で制御する]({{ site.baseurl }}/ja/2.0/workflows)」を参照してください。
+- 並列実行、順次実行、スケジュール実行、手動承認のワークフローによるジョブを組織化する例については「[ジョブの実行を Workflow で制御する]({{ site.baseurl }}/2.0/workflows)」を参照してください。
 
-- すべてのキーとビルド済み Docker イメージに関する詳細なリファレンスについては、それぞれ「[CircleCI を設定する]({{ site.baseurl }}/ja/2.0/configuration-reference/)」、「[CircleCI のビルド済み Docker イメージ]({{ site.baseurl }}/ja/2.0/circleci-images/)」を参照してください。
+- すべてのキーとビルド済み Docker イメージに関する詳細なリファレンスについては、それぞれ「[CircleCI を設定する]({{ site.baseurl }}/2.0/configuration-reference/)」、「[CircleCI のビルド済み Docker イメージ]({{ site.baseurl }}/2.0/circleci-images/)」を参照してください。

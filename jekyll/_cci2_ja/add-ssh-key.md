@@ -15,7 +15,7 @@ CircleCI に SSH 公開鍵を登録する必要があるケースは、以下の
 1. バージョン管理システムからコードをチェックアウトする
 2. 実行中のプロセスが他のサービスにアクセスできるようにする
 
-1 つ目の目的で SSH 鍵を登録するときは、[GitHub および Bitbucket とのインテグレーション]({{ site.baseurl }}/ja/2.0/gh-bb-integration/#プロジェクトで追加のプライベートリポジトリのチェックアウトを有効にする) のページを参照してください。 2 つ目が目的のときは、下記の手順でプロジェクトに SSH 鍵を登録してください。
+1 つ目の目的で SSH 鍵を登録するときは、[GitHub および Bitbucket とのインテグレーション]({{ site.baseurl }}/2.0/gh-bb-integration/#プロジェクトで追加のプライベートリポジトリのチェックアウトを有効にする) のページを参照してください。 2 つ目が目的のときは、下記の手順でプロジェクトに SSH 鍵を登録してください。
 
 ## 追加手順
 
@@ -39,7 +39,7 @@ OpenSSH を使う場合は `ssh-keygen -m pem` コマンドで鍵を生成する
 
 CircleCI のすべてのジョブは、登録された SSH 鍵に対し `ssh-agent` を通じて自動で署名を行います。ただし、コンテナに対して鍵を実際に登録するには設定ファイル内で `add_ssh_keys` を **必ず** 指定しなければなりません。
 
-コンテナに SSH 鍵を 1 つまたは複数登録するには、以下の例にあるように、設定ファイル内の適切な [job]({{ site.baseurl }}/ja/2.0/jobs-steps/) に[特別な step]({{ site.baseurl }}/ja/2.0/configuration-reference/#add_ssh_keys)として `add_ssh_keys` を挿入します。
+コンテナに SSH 鍵を 1 つまたは複数登録するには、以下の例にあるように、設定ファイル内の適切な [job]({{ site.baseurl }}/2.0/jobs-steps/) に[特別な step]({{ site.baseurl }}/2.0/configuration-reference/#add_ssh_keys)として `add_ssh_keys` を挿入します。
 
 ```yaml
 version: 2

@@ -8,7 +8,7 @@ categories:
 order: 6
 ---
 
-ここでは、PHP サンプルアプリケーションの [`.circleci/config.yml`]({{ site.baseurl }}/ja/2.0/configuration-reference/) ファイルを作成する方法を詳細に説明します。
+ここでは、PHP サンプルアプリケーションの [`.circleci/config.yml`]({{ site.baseurl }}/2.0/configuration-reference/) ファイルを作成する方法を詳細に説明します。
 
 - 目次
 {:toc}
@@ -61,7 +61,7 @@ jobs: # ステップの集合
       - restore_cache: # `composer.lock` が変更されていない場合に、依存関係キャッシュを復元する特別なステップ
           keys:
             - composer-v1-{{ checksum "composer.lock" }}
-            # 正確な一致が見つからない場合は、最新のキャッシュの使用にフォールバックします (https://circleci.com/docs/ja/2.0/caching/ を参照)
+            # 正確な一致が見つからない場合は、最新のキャッシュの使用にフォールバックします (https://circleci.com/ja/docs/2.0/caching/ を参照)
             - composer-v1-
       - run: composer install -n --prefer-dist
       - save_cache: # `composer.lock` キャッシュキーテンプレートを使用して依存関係キャッシュを保存する特別なステップ
@@ -71,7 +71,7 @@ jobs: # ステップの集合
       - restore_cache: # `package.json` が変更されていない場合に、依存関係キャッシュを復元する特別なステップ
           keys:
             - node-v1-{{ checksum "package.json" }}
-            # 正確な一致が見つからない場合は、最新のキャッシュの使用にフォールバックします (https://circleci.com/docs/ja/2.0/caching/ を参照)
+            # 正確な一致が見つからない場合は、最新のキャッシュの使用にフォールバックします (https://circleci.com/ja/docs/2.0/caching/ を参照)
             - node-v1-
       - run: yarn install
       - save_cache: # `package.json` キャッシュキーテンプレートを使用して依存関係キャッシュを保存する特別なステップ
@@ -82,26 +82,26 @@ jobs: # ステップの集合
       - run: php artisan migrate --env=testing --database=sqlite_testing --force
       - run: ./vendor/bin/codecept build
       - run: ./vendor/bin/codecept run
-      # デプロイ例については https://circleci.com/docs/ja/2.0/deployment-integrations/ を参照してください
+      # デプロイ例については https://circleci.com/ja/docs/2.0/deployment-integrations/ を参照してください
 ```
 
 {% endraw %}
 
 ## 設定の詳細
 
-`config.yml` は必ず [`version`]({{ site.baseurl }}/ja/2.0/configuration-reference/#version) キーから始まります。 このキーは、互換性を損なう変更に関する警告を表示するために使用されます。
+`config.yml` は必ず [`version`]({{ site.baseurl }}/2.0/configuration-reference/#version) キーから始まります。 このキーは、互換性を損なう変更に関する警告を表示するために使用されます。
 
 ```yaml
 version: 2
 ```
 
-1回の実行は 1つ以上の[ジョブ]({{ site.baseurl }}/ja/2.0/configuration-reference/#jobs)で構成されます。 この実行では [Workflows]({{ site.baseurl }}/ja/2.0/configuration-reference/#workflows) を使用していないため、`build` ジョブを持つ必要があります。
+1回の実行は 1つ以上の[ジョブ]({{ site.baseurl }}/2.0/configuration-reference/#jobs)で構成されます。 この実行では [Workflows]({{ site.baseurl }}/2.0/configuration-reference/#workflows) を使用していないため、`build` ジョブを持つ必要があります。
 
-[`working_directory`]({{ site.baseurl }}/ja/2.0/configuration-reference/#job_name) キーを使用して、ジョブの [`steps`]({{ site.baseurl }}/ja/2.0/configuration-reference/#steps) を実行する場所を指定します。 `working_directory` のデフォルトの値は `~/project` です (`project` は文字列リテラル)。
+[`working_directory`]({{ site.baseurl }}/2.0/configuration-reference/#job_name) キーを使用して、ジョブの [`steps`]({{ site.baseurl }}/2.0/configuration-reference/#steps) を実行する場所を指定します。 `working_directory` のデフォルトの値は `~/project` です (`project` は文字列リテラル)。
 
-ジョブのステップは [Executor]({{ site.baseurl }}/ja/2.0/executor-types/) という名前の仮想環境で実行されます。
+ジョブのステップは [Executor]({{ site.baseurl }}/2.0/executor-types/) という名前の仮想環境で実行されます。
 
-この例では [`docker`]({{ site.baseurl }}/ja/2.0/configuration-reference/#docker) Executor を使用して、カスタム Docker イメージを指定しています。 ここでは、ブラウザーツールを含む [CircleCI 提供の PHP Docker イメージ](https://circleci.com/docs/ja/2.0/circleci-images/#php)を使用します。
+この例では [`docker`]({{ site.baseurl }}/2.0/configuration-reference/#docker) Executor を使用して、カスタム Docker イメージを指定しています。 ここでは、ブラウザーツールを含む [CircleCI 提供の PHP Docker イメージ](https://circleci.com/ja/docs/2.0/circleci-images/#php)を使用します。
 
 ```yaml
 version: 2
@@ -129,9 +129,9 @@ jobs:
 
 コンフィグのその後のステップはすべて、依存関係の管理とキャッシュに関連しています。 このサンプルプロジェクトでは、PHP の依存関係と JavaScript の依存関係の両方をキャッシュします。
 
-[`save_cache`]({{ site.baseurl }}/ja/2.0/configuration-reference/#save_cache) ステップを使用して、いくつかのファイルまたはディレクトリをキャッシュします。 この例のキャッシュキーは、`composer.lock` ファイルのチェックサムに基づいていますが、より汎用的なキャッシュキーを使用するようにフォールバックします。
+[`save_cache`]({{ site.baseurl }}/2.0/configuration-reference/#save_cache) ステップを使用して、いくつかのファイルまたはディレクトリをキャッシュします。 この例のキャッシュキーは、`composer.lock` ファイルのチェックサムに基づいていますが、より汎用的なキャッシュキーを使用するようにフォールバックします。
 
-[`restore_cache`]({{ site.baseurl }}/ja/2.0/configuration-reference/#restore_cache) ステップを使用して、キャッシュされたファイルまたはディレクトリを復元します。
+[`restore_cache`]({{ site.baseurl }}/2.0/configuration-reference/#restore_cache) ステップを使用して、キャッシュされたファイルまたはディレクトリを復元します。
 
 {% raw %}
 
@@ -175,8 +175,8 @@ jobs:
 
 {:.no_toc}
 
-- デプロイターゲットの設定例については、「[デプロイの設定]({{ site.baseurl }}/ja/2.0/deployment-integrations/)」を参照してください。
+- デプロイターゲットの設定例については、「[デプロイの設定]({{ site.baseurl }}/2.0/deployment-integrations/)」を参照してください。
 
-- その他のパブリック PHP プロジェクトの設定例については、「[設定ファイルをローカルでテストする]({{ site.baseurl }}/ja/2.0/examples/)」を参照してください。
+- その他のパブリック PHP プロジェクトの設定例については、「[設定ファイルをローカルでテストする]({{ site.baseurl }}/2.0/examples/)」を参照してください。
 
-- CircleCI 2.0 を初めて使用する場合は、[プロジェクトのチュートリアル]({{ site.baseurl }}/ja/2.0/project-walkthrough/)に目を通すことをお勧めします。ここでは、Python と Flask を使用した設定を例に詳しく解説しています。
+- CircleCI 2.0 を初めて使用する場合は、[プロジェクトのチュートリアル]({{ site.baseurl }}/2.0/project-walkthrough/)に目を通すことをお勧めします。ここでは、Python と Flask を使用した設定を例に詳しく解説しています。

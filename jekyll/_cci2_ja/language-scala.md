@@ -8,7 +8,7 @@ categories:
 order: 1
 ---
 
-ここでは、以下のセクションに沿って、Scala アプリケーションの [`.circleci/config.yml`]({{ site.baseurl }}/ja/2.0/configuration-reference/) の作成方法について説明します。
+ここでは、以下のセクションに沿って、Scala アプリケーションの [`.circleci/config.yml`]({{ site.baseurl }}/2.0/configuration-reference/) の作成方法について説明します。
 
 - 目次
 {:toc}
@@ -17,7 +17,7 @@ order: 1
 
 {:.no_toc}
 
-このドキュメントは、[プロジェクトの AWS 権限](https://circleci.com/docs/ja/2.0/deployment-integrations/#aws)に、S3 バケットの読み取りと書き込みが許可される有効な AWS キーが設定されていることを前提としています。 このドキュメントの例では、指定された S3 バケットにビルドパッケージがアップロードされます。
+このドキュメントは、[プロジェクトの AWS 権限](https://circleci.com/ja/docs/2.0/deployment-integrations/#aws)に、S3 バケットの読み取りと書き込みが許可される有効な AWS キーが設定されていることを前提としています。 このドキュメントの例では、指定された S3 バケットにビルドパッケージがアップロードされます。
 
 ## Scala サンプルプロジェクトのソースコード
 
@@ -31,7 +31,7 @@ CircleCI 2.0 では、リポジトリの root に新しいディレクトリを�
     touch .circleci/config.yml
 
 
-最初のコマンドは `.circleci` という名前のディレクトリを作成し、次のコマンドは `.circleci` ディレクトリの中に `config.yml` という名前の新しいファイルを作成します。 繰り返しますが、.circleci というディレクトリ名と config.yml というファイル名を使用する**必要があります**。 バージョン 2.0 の前提条件については、[こちらのドキュメント]({{ site.baseurl }}/ja/2.0/migrating-from-1-2/)を参照してください。
+最初のコマンドは `.circleci` という名前のディレクトリを作成し、次のコマンドは `.circleci` ディレクトリの中に `config.yml` という名前の新しいファイルを作成します。 繰り返しますが、.circleci というディレクトリ名と config.yml というファイル名を使用する**必要があります**。 バージョン 2.0 の前提条件については、[こちらのドキュメント]({{ site.baseurl }}/2.0/migrating-from-1-2/)を参照してください。
 
 ### Scala の config.yml ファイル
 
@@ -61,12 +61,12 @@ jobs:
                     apt-get clean && apt-get autoclean
       - checkout
       - restore_cache:
-          # 依存関係キャッシュについては https://circleci.com/docs/ja/2.0/caching/ をお読みください
+          # 依存関係キャッシュについては https://circleci.com/ja/docs/2.0/caching/ をお読みください
           key: sbt-cache
       - run:
           name: samplescala dist パッケージをコンパイル
           command: cat /dev/null | sbt clean update dist
-      - store_artifacts: # アーティファクト (https://circleci.com/docs/ja/2.0/artifacts/) に表示するため
+      - store_artifacts: # アーティファクト (https://circleci.com/ja/docs/2.0/artifacts/) に表示するため
           path: target/universal/samplescala.zip
           destination: samplescala
       - save_cache:
@@ -83,7 +83,7 @@ jobs:
 
 ## スキーマの詳細説明
 
-`config.yml` は必ず [`version`]({{ site.baseurl }}/ja/2.0/configuration-reference/#version) キーから始まります。 このキーは、互換性を損なう変更に関する警告を表示するために使用されます。
+`config.yml` は必ず [`version`]({{ site.baseurl }}/2.0/configuration-reference/#version) キーから始まります。 このキーは、互換性を損なう変更に関する警告を表示するために使用されます。
 
 ```yaml
 version: 2
@@ -187,11 +187,11 @@ steps/run キーは、実行するアクションのタイプを指定します�
 
 上記の例について以下に説明します。
 
-- [`checkout`]({{ site.baseurl }}/ja/2.0/configuration-reference/#checkout)：基本的に、git は GitHub から取得したプロジェクトリポジトリをコンテナにクローンします。
-- [`restore_cache`]({{ site.baseurl }}/ja/2.0/configuration-reference/#restore_cache) キー：復元するキャッシュファイルの名前を指定します。 キー名は、このスキーマの後方にある save_cache キーで指定されます。 指定されたキーが見つからない場合は、何も復元されず、処理が続行されます。
-- [`run`]({{ site.baseurl }}/ja/2.0/configuration-reference/#run) コマンドの `cat /dev/null | sbt clean update dist`：パッケージの .zip ファイルを生成する sbt コンパイルコマンドを実行します。
-- [`store_artifacts`]({{ site.baseurl }}/ja/2.0/configuration-reference/#store_artifacts) パス：イメージの ARTIFACT ゾーンにコピーするソースファイルのパスを指定します。
-- [`save_cache`]({{ site.baseurl }}/ja/2.0/configuration-reference/#save_cache) パス：将来のビルドで使用するために、指定されたディレクトリを保存します ([`restore_cache`]({{ site.baseurl }}/ja/2.0/configuration-reference/#restore_cache) キーで指定された場合)。
+- [`checkout`]({{ site.baseurl }}/2.0/configuration-reference/#checkout)：基本的に、git は GitHub から取得したプロジェクトリポジトリをコンテナにクローンします。
+- [`restore_cache`]({{ site.baseurl }}/2.0/configuration-reference/#restore_cache) キー：復元するキャッシュファイルの名前を指定します。 キー名は、このスキーマの後方にある save_cache キーで指定されます。 指定されたキーが見つからない場合は、何も復元されず、処理が続行されます。
+- [`run`]({{ site.baseurl }}/2.0/configuration-reference/#run) コマンドの `cat /dev/null | sbt clean update dist`：パッケージの .zip ファイルを生成する sbt コンパイルコマンドを実行します。
+- [`store_artifacts`]({{ site.baseurl }}/2.0/configuration-reference/#store_artifacts) パス：イメージの ARTIFACT ゾーンにコピーするソースファイルのパスを指定します。
+- [`save_cache`]({{ site.baseurl }}/2.0/configuration-reference/#save_cache) パス：将来のビルドで使用するために、指定されたディレクトリを保存します ([`restore_cache`]({{ site.baseurl }}/2.0/configuration-reference/#restore_cache) キーで指定された場合)。
 
 2.0 スキーマの最後の部分は deploy コマンドキーです。これは、コンパイルされた samplescala.zip を $CIRCLE_ARTIFACTS/ ディレクトリに移動し、その名前を変更します。 その後、指定された AWS S3 バケットにファイルがアップロードされます。
 
@@ -210,5 +210,5 @@ steps:
 {:.no_toc}
 
 - 引用元のブログ記事「[Migrating Your Scala/sbt Schema from CircleCI 1.0 to CircleCI 2.0 (Scala/sbt スキーマを CircleCI 1.0 から CircleCI 2.0 に移行する)](https://circleci.com/blog/migrating-your-scala-sbt-schema-from-circleci-1-0-to-circleci-2-0/)」を参照してください。
-- デプロイターゲットのその他の設定例については、「[デプロイの設定]({{ site.baseurl }}/ja/2.0/deployment-integrations/)」を参照してください。
+- デプロイターゲットのその他の設定例については、「[デプロイの設定]({{ site.baseurl }}/2.0/deployment-integrations/)」を参照してください。
 - [CircleCI で SBT のテストを並列化する](https://tanin.nanakorn.com/technical/2018/09/10/parallelise-tests-in-sbt-on-circle-ci.html)方法もご確認ください。

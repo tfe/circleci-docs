@@ -3,7 +3,7 @@ untranslated: true
 layout: classic-docs
 title: "Welcome to CircleCI Documentation"
 description: "Welcome to CircleCI Documentation"
-permalink: /ja/2.0/
+permalink: /2.0/
 ---
 
 Use the tutorials, samples, how-to, and reference documentation to learn CircleCI.
@@ -54,10 +54,10 @@ Use the tutorials, samples, how-to, and reference documentation to learn CircleC
   </tr>
   <tr>
     <td><ul>
-			<li><a href="{{ site.baseurl }}/ja/2.0/configuration-reference/">Configuration Reference</a></li>
-	                <li><a href="{{ site.baseurl }}/ja/2.0/writing-yaml/">Writing YAML</a></li>
-			<li><a href="{{ site.baseurl }}/ja/2.0/env-vars/">Using Environment Variables</a></li>
-			<li><a href="{{ site.baseurl }}/ja/2.0/ssh-access-jobs/">Debugging with SSH</a></li>
+			<li><a href="{{ site.baseurl }}/2.0/configuration-reference/">Configuration Reference</a></li>
+	                <li><a href="{{ site.baseurl }}/2.0/writing-yaml/">Writing YAML</a></li>
+			<li><a href="{{ site.baseurl }}/2.0/env-vars/">Using Environment Variables</a></li>
+			<li><a href="{{ site.baseurl }}/2.0/ssh-access-jobs/">Debugging with SSH</a></li>
 	                <li><a href="/docs/2.0/reusing-config/">Reusing Config</a></li>
 		</ul></td>
     <td><ul>

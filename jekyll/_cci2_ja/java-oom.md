@@ -70,9 +70,9 @@ Java OOM エラーのデバッグを行っても、たいていの場合 `exit c
 
 最大サイズ `-Xmxn` がアプリケーションのビルドを完了できる程度に大きく、かつ他のプロセスが CircleCI ビルドコンテナの残りのメモリを使用できる程度に小さくなるように設定してください。
 
-それでも引き続きメモリ制限に達する場合は、[プロジェクトの RAM を増やす](https://circleci.com/docs/ja/2.0/configuration-reference/#resource_class)ことを検討してください。
+それでも引き続きメモリ制限に達する場合は、[プロジェクトの RAM を増やす](https://circleci.com/ja/docs/2.0/configuration-reference/#resource_class)ことを検討してください。
 
 ## 関連項目
 
-[Java 言語ガイド]({{ site.baseurl }}/ja/2.0/language-java/)
-[Android チュートリアル]({{ site.baseurl }}/ja/2.0/language-android/)
+[Java 言語ガイド]({{ site.baseurl }}/2.0/language-java/)
+[Android チュートリアル]({{ site.baseurl }}/2.0/language-android/)

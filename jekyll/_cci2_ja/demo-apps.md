@@ -12,23 +12,23 @@ Linux または iOS でビルドされるコードは、通常 CircleCI 2.0 で�
 
 言語ガイド | フレームワーク | GitHub リポジトリ名
 ---------|-----------|-----------------
-[Android]({{ site.baseurl }}/ja/2.0/language-android/){:target="_blank"} | Gradle |
+[Android]({{ site.baseurl }}/2.0/language-android/){:target="_blank"} | Gradle |
 [Android](https://github.com/CircleCI-Public/circleci-demo-react-native/blob/master/README.md){:target="_blank"} | React Native | [circleci-demo-react-native](https://github.com/CircleCI-Public/circleci-demo-react-native){:target="_blank"}
 [Clojure]{:target="_blank"} | Luminus | [circleci-demo-clojure-luminus](https://github.com/CircleCI-Public/circleci-demo-clojure-luminus){:target="_blank"}
-[Crystal]({{ site.baseurl }}/ja/2.0/language-crystal/) | Kemal | [circleci-demo-crystal](https://github.com/CircleCI-Public/circleci-demo-crystal)
+[Crystal]({{ site.baseurl }}/2.0/language-crystal/) | Kemal | [circleci-demo-crystal](https://github.com/CircleCI-Public/circleci-demo-crystal)
 [Elixir]{:target="_blank"} | Phoenix | [circleci-demo-elixir-phoenix](https://github.com/CircleCI-Public/circleci-demo-elixir-phoenix){:target="_blank"}
 [Go]{:target="_blank"} | Go | [circleci-demo-go](https://github.com/CircleCI-Public/circleci-demo-go){:target="_blank"}
 [iOS]{:target="_blank"} | Xcode | [circleci-demo-ios](https://github.com/CircleCI-Public/circleci-demo-ios){:target="_blank"}
 [iOS](https://github.com/CircleCI-Public/circleci-demo-react-native/blob/master/README.md){:target="_blank"} | React Native | [circleci-demo-react-native](https://github.com/CircleCI-Public/circleci-demo-react-native){:target="_blank"}
-[macOS]({{ site.baseurl }}/ja/2.0/hello-world-macos){:target="_blank*"} | MacOS | [circleci-demo-macos](https://github.com/CircleCI-Public/circleci-demo-macos){:target="_blank"}
+[macOS]({{ site.baseurl }}/2.0/hello-world-macos){:target="_blank*"} | MacOS | [circleci-demo-macos](https://github.com/CircleCI-Public/circleci-demo-macos){:target="_blank"}
 [Java]{:target="_blank"} | Spring | [circleci-demo-java-spring](https://github.com/CircleCI-Public/circleci-demo-java-spring){:target="_blank"}
 [JavaScript]{:target="_blank"} | React | [circleci-demo-javascript-express](https://github.com/CircleCI-Public/circleci-demo-javascript-express){:target="_blank"}
 [PHP]{:target="_blank"} | Laravel | [circleci-demo-php-laravel](https://github.com/CircleCI-Public/circleci-demo-php-laravel){:target="_blank"}
 [Python]{:target="_blank"} | Django | [circleci-demo-python-django](https://github.com/CircleCI-Public/circleci-demo-python-django){:target="_blank"}
-[Python]({{ site.baseurl }}/ja/2.0/project-walkthrough/){:target="_blank"} | Flask | [circleci-demo-python-flask](https://github.com/CircleCI-Public/circleci-demo-python-flask){:target="_blank"}
+[Python]({{ site.baseurl }}/2.0/project-walkthrough/){:target="_blank"} | Flask | [circleci-demo-python-flask](https://github.com/CircleCI-Public/circleci-demo-python-flask){:target="_blank"}
 [React Native](https://github.com/CircleCI-Public/circleci-demo-react-native/blob/master/README.md){:target="_blank"} | React Native | [circleci-demo-react-native](https://github.com/CircleCI-Public/circleci-demo-react-native){:target="_blank"}
 [Ruby および Rails]{:target="_blank"} | Rails | [circleci-demo-ruby-rails](https://github.com/CircleCI-Public/circleci-demo-ruby-rails){:target="_blank"}
-[Scala]({{ site.baseurl }}/ja/2.0/language-scala/){:target="_blank"} | sbt | [samplescala](https://github.com/ariv3ra/samplescala){:target="_blank"}
+[Scala]({{ site.baseurl }}/2.0/language-scala/){:target="_blank"} | sbt | [samplescala](https://github.com/ariv3ra/samplescala){:target="_blank"}
 {: class="table"}
 
 ## サポートされている言語
@@ -48,15 +48,15 @@ C、C#、C++、Clojure、Elixir、Erlang、Go、Groovy、Haskell、Haxe、Java�
 
 ## 関連項目
 
-最初のビルドを実行する手順については、「[はじめに]({{ site.baseurl }}/ja/2.0/getting-started/)」を参照してください。
+最初のビルドを実行する手順については、「[はじめに]({{ site.baseurl }}/2.0/getting-started/)」を参照してください。
 
-[Android]：{{ site.baseurl }}/ja/2.0/language-android/
-[Clojure]：{{ site.baseurl }}/ja/2.0/language-clojure/
-[Elixir]：{{ site.baseurl }}/ja/2.0/language-elixir/
-[Go]：{{ site.baseurl }}/ja/2.0/language-go/
-[iOS]：{{ site.baseurl }}/ja/2.0/ios-tutorial/
-[Java]：{{ site.baseurl }}/ja/2.0/language-java/
-[JavaScript]：{{ site.baseurl }}/ja/2.0/language-javascript/
-[PHP]：{{ site.baseurl }}/ja/2.0/language-php/
-[Python]：{{ site.baseurl }}/ja/2.0/language-python/
-[Ruby および Rails]：{{ site.baseurl }}/ja/2.0/language-ruby/
+[Android]：{{ site.baseurl }}/2.0/language-android/
+[Clojure]：{{ site.baseurl }}/2.0/language-clojure/
+[Elixir]：{{ site.baseurl }}/2.0/language-elixir/
+[Go]：{{ site.baseurl }}/2.0/language-go/
+[iOS]：{{ site.baseurl }}/2.0/ios-tutorial/
+[Java]：{{ site.baseurl }}/2.0/language-java/
+[JavaScript]：{{ site.baseurl }}/2.0/language-javascript/
+[PHP]：{{ site.baseurl }}/2.0/language-php/
+[Python]：{{ site.baseurl }}/2.0/language-python/
+[Ruby および Rails]：{{ site.baseurl }}/2.0/language-ruby/

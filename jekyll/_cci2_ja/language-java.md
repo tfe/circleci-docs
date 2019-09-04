@@ -17,7 +17,7 @@ order: 4
 
 {:.no_toc}
 
-お急ぎの場合は、以下の設定例をプロジェクトの root ディレクトリにある [`.circleci/config.yml`]({{ site.baseurl }}/ja/2.0/configuration-reference/) にコピーし、ビルドを開始してください。
+お急ぎの場合は、以下の設定例をプロジェクトの root ディレクトリにある [`.circleci/config.yml`]({{ site.baseurl }}/2.0/configuration-reference/) にコピーし、ビルドを開始してください。
 
 ここでは、以下を前提としています。
 
@@ -46,7 +46,7 @@ jobs: # ステップの集合
       - checkout # ソースコードを作業ディレクトリにチェックアウトします
 
       - restore_cache: # 初回実行後、または `pom.xml` が変更されている場合に、保存されているキャッシュを復元します
-          # 依存関係キャッシュについては https://circleci.com/docs/ja/2.0/caching/ をお読みください
+          # 依存関係キャッシュについては https://circleci.com/ja/docs/2.0/caching/ をお読みください
           key: circleci-demo-java-spring-{{ checksum "pom.xml" }}
 
       - run: mvn dependency:go-offline # プロジェクトの依存関係を取得します
@@ -59,13 +59,13 @@ jobs: # ステップの集合
       - run: mvn package # 実際のテストを実行します
 
       - store_test_results: # CircleCI ダッシュボードにテストメタデータを表示できるように、`target/surefire-reports` ディレクトリからアップロードします
-      # テストサマリー (https://circleci.com/docs/ja/2.0/collect-test-data/) に表示するテスト結果をアップロードします
+      # テストサマリー (https://circleci.com/ja/docs/2.0/collect-test-data/) に表示するテスト結果をアップロードします
           path: target/surefire-reports
 
       - store_artifacts: # uberjar をアーティファクトとして保存します
-      # アーティファクト (https://circleci.com/docs/ja/2.0/artifacts/) に表示するテストサマリーをアップロードします
+      # アーティファクト (https://circleci.com/ja/docs/2.0/artifacts/) に表示するテストサマリーをアップロードします
           path: target/demo-java-spring-0.0.1-SNAPSHOT.jar
-      # デプロイ例については https://circleci.com/docs/ja/2.0/deployment-integrations/ を参照してください
+      # デプロイ例については https://circleci.com/ja/docs/2.0/deployment-integrations/ を参照してください
 ```
 
 {% endraw %}
@@ -124,7 +124,7 @@ version: 2
 
 続けて、CircleCI ダッシュボードにテストメタデータを表示できるように、`store_test_results` が `target/surefire-reports` ディレクトリからテストメタデータを取得してアップロードします。
 
-最後に `store_artifacts` ステップを使用して、uberjar を[アーティファクト](https://circleci.com/docs/ja/2.0/artifacts/)として保存します。 そこから、これを目的の継続的デプロイスキームに結び付けることができます。
+最後に `store_artifacts` ステップを使用して、uberjar を[アーティファクト](https://circleci.com/ja/docs/2.0/artifacts/)として保存します。 そこから、これを目的の継続的デプロイスキームに結び付けることができます。
 
 {% raw %}
 
@@ -161,5 +161,5 @@ version: 2
 
 {:.no_toc}
 
-- デプロイターゲットの設定例については、「[デプロイの設定]({{ site.baseurl }}/ja/2.0/deployment-integrations/)」を参照してください。
-- Java のメモリの問題に対処する方法については、「[Java メモリエラーの回避とデバッグ]({{ site.baseurl }}/ja/2.0/java-oom/)」を参照してください。
+- デプロイターゲットの設定例については、「[デプロイの設定]({{ site.baseurl }}/2.0/deployment-integrations/)」を参照してください。
+- Java のメモリの問題に対処する方法については、「[Java メモリエラーの回避とデバッグ]({{ site.baseurl }}/2.0/java-oom/)」を参照してください。

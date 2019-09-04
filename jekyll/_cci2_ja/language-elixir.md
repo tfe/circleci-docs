@@ -10,7 +10,7 @@ order: 2
 
 これは、単純な Phoenix Web アプリケーション用の注釈付き `config.yml` で、<https://github.com/CircleCI-Public/circleci-demo-elixir-phoenix> から入手できます。
 
-お急ぎの場合は、以下の設定をプロジェクトの root ディレクトリにある [`.circleci/config.yml`]({{ site.baseurl }}/ja/2.0/configuration-reference/) にコピーしてください。 お急ぎでなければ、設定全体に目を通し、十分に理解を深めることをお勧めします。
+お急ぎの場合は、以下の設定をプロジェクトの root ディレクトリにある [`.circleci/config.yml`]({{ site.baseurl }}/2.0/configuration-reference/) にコピーしてください。 お急ぎでなければ、設定全体に目を通し、十分に理解を深めることをお勧めします。
 
 ## 設定例
 
@@ -41,7 +41,7 @@ jobs:  # 1回の実行の基本作業単位
       - run: mix local.rebar --force  # rebar のコピーをフェッチします (プロンプトなし)
 
       - restore_cache:  # 保存されているミックスキャッシュを復元します
-      # 依存関係キャッシュについては https://circleci.com/docs/ja/2.0/caching/ をお読みください
+      # 依存関係キャッシュについては https://circleci.com/ja/docs/2.0/caching/ をお読みください
           keys:  # キャッシュキーのリスト (特定性の高い順)
             - v1-mix-cache-{{ .Branch }}-{{ checksum "mix.lock" }}
             - v1-mix-cache-{{ .Branch }}
@@ -74,7 +74,7 @@ jobs:  # 1回の実行の基本作業単位
       - run: mix test  # プロジェクトのすべてのテストを実行します
 
       - store_test_results:  # テストサマリーに表示する JUnit テスト結果をアップロードします
-          # 詳しくは https://circleci.com/docs/ja/2.0/collect-test-data/ を参照してください
+          # 詳しくは https://circleci.com/ja/docs/2.0/collect-test-data/ を参照してください
           path: _build/test/lib/REPLACE_WITH_YOUR_APP_NAME # アプリの名前に置換します
 ```
 
@@ -82,19 +82,19 @@ jobs:  # 1回の実行の基本作業単位
 
 ## 設定の詳細
 
-`config.yml` は必ず [`version`]({{ site.baseurl }}/ja/2.0/configuration-reference/#version) キーから始まります。 このキーは、互換性を損なう変更に関する警告を表示するために使用されます。
+`config.yml` は必ず [`version`]({{ site.baseurl }}/2.0/configuration-reference/#version) キーから始まります。 このキーは、互換性を損なう変更に関する警告を表示するために使用されます。
 
 ```yaml
 version: 2
 ```
 
-1回の実行は 1つ以上の[ジョブ]({{ site.baseurl }}/ja/2.0/configuration-reference/#jobs)で構成されます。 この実行では [Workflows]({{ site.baseurl }}/ja/2.0/configuration-reference/#workflows) を使用していないため、`build` ジョブを持つ必要があります。
+1回の実行は 1つ以上の[ジョブ]({{ site.baseurl }}/2.0/configuration-reference/#jobs)で構成されます。 この実行では [Workflows]({{ site.baseurl }}/2.0/configuration-reference/#workflows) を使用していないため、`build` ジョブを持つ必要があります。
 
-[`working_directory`]({{ site.baseurl }}/ja/2.0/configuration-reference/#job_name) キーを使用して、ジョブの [`steps`]({{ site.baseurl }}/ja/2.0/configuration-reference/#steps) を実行する場所を指定します。 `working_directory` のデフォルトの値は `~/project` です (`project` は文字列リテラル)。
+[`working_directory`]({{ site.baseurl }}/2.0/configuration-reference/#job_name) キーを使用して、ジョブの [`steps`]({{ site.baseurl }}/2.0/configuration-reference/#steps) を実行する場所を指定します。 `working_directory` のデフォルトの値は `~/project` です (`project` は文字列リテラル)。
 
-ジョブのステップは [Executor]({{ site.baseurl }}/ja/2.0/executor-types/) という名前の仮想環境で実行されます。
+ジョブのステップは [Executor]({{ site.baseurl }}/2.0/executor-types/) という名前の仮想環境で実行されます。
 
-この例では [`docker`]({{ site.baseurl }}/ja/2.0/configuration-reference/#docker) Executor を使用して、カスタム Docker イメージを指定しています。 [CircleCI 提供の Elixir Docker イメージ](https://circleci.com/docs/ja/2.0/circleci-images/#elixir)を使用します。
+この例では [`docker`]({{ site.baseurl }}/2.0/configuration-reference/#docker) Executor を使用して、カスタム Docker イメージを指定しています。 [CircleCI 提供の Elixir Docker イメージ](https://circleci.com/ja/docs/2.0/circleci-images/#elixir)を使用します。
 
 ```yaml
 jobs:
@@ -113,11 +113,11 @@ jobs:
     working_directory: ~/app
 ```
 
-ジョブのコンテナを選択したら、いくつかのコマンドを実行する [`steps`]({{ site.baseurl }}/ja/2.0/configuration-reference/#steps) を作成します。
+ジョブのコンテナを選択したら、いくつかのコマンドを実行する [`steps`]({{ site.baseurl }}/2.0/configuration-reference/#steps) を作成します。
 
-[`checkout`]({{ site.baseurl }}/ja/2.0/configuration-reference/#checkout) ステップを使用して、ソースコードをチェックアウトします。 デフォルトでは、`working_directory` で指定されたパスにソースコードがチェックアウトされます。
+[`checkout`]({{ site.baseurl }}/2.0/configuration-reference/#checkout) ステップを使用して、ソースコードをチェックアウトします。 デフォルトでは、`working_directory` で指定されたパスにソースコードがチェックアウトされます。
 
-[`run`]({{ site.baseurl }}/ja/2.0/configuration-reference/#run) ステップを使用して、コマンドを実行します。 この例では [Mix](https://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html) を使用して Elixir ツールをインストールします。
+[`run`]({{ site.baseurl }}/2.0/configuration-reference/#run) ステップを使用して、コマンドを実行します。 この例では [Mix](https://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html) を使用して Elixir ツールをインストールします。
 
 ```yaml
     steps:
@@ -126,11 +126,11 @@ jobs:
       - run: mix local.rebar --force
 ```
 
-実行の間隔を短縮するには、[依存関係またはソースコードのキャッシュ]({{ site.baseurl }}/ja/2.0/caching/)を検討してください。
+実行の間隔を短縮するには、[依存関係またはソースコードのキャッシュ]({{ site.baseurl }}/2.0/caching/)を検討してください。
 
-[`save_cache`]({{ site.baseurl }}/ja/2.0/configuration-reference/#save_cache) ステップを使用して、いくつかのファイルまたはディレクトリをキャッシュします。 この例では、仮想環境とインストールされたパッケージがキャッシュされます。
+[`save_cache`]({{ site.baseurl }}/2.0/configuration-reference/#save_cache) ステップを使用して、いくつかのファイルまたはディレクトリをキャッシュします。 この例では、仮想環境とインストールされたパッケージがキャッシュされます。
 
-[`restore_cache`]({{ site.baseurl }}/ja/2.0/configuration-reference/#restore_cache) ステップを使用して、キャッシュされたファイルまたはディレクトリを復元します。
+[`restore_cache`]({{ site.baseurl }}/2.0/configuration-reference/#restore_cache) ステップを使用して、キャッシュされたファイルまたはディレクトリを復元します。
 
 {% raw %}
 
@@ -177,5 +177,5 @@ jobs:
 
 ## 関連項目
 
-[依存関係のキャッシュ]({{ site.baseurl }}/ja/2.0/caching/)
-[データベースの設定]({{ site.baseurl }}/ja/2.0/databases/)
+[依存関係のキャッシュ]({{ site.baseurl }}/2.0/caching/)
+[データベースの設定]({{ site.baseurl }}/2.0/databases/)

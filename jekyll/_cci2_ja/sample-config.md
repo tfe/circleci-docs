@@ -7,12 +7,12 @@ categories: [migration]
 order: 2
 ---
 
-このページでは、[`.circleci/config.yml`]({{ site.baseurl }}/ja/2.0/configuration-reference/) ファイルの設定例を 3 つあげて解説しています。
+このページでは、[`.circleci/config.yml`]({{ site.baseurl }}/2.0/configuration-reference/) ファイルの設定例を 3 つあげて解説しています。
 
 * TOC
 {:toc}
 
-CircleCI 2.0 の設定ファイルは `version: 2` というキーから始まります。このキーは古い CircleCI 1.0 でビルドしているプロジェクトを CircleCI 2.0 で使えるようにします。言い換えると、他のプロジェクトでは 2.0 を使いながら 1.0 のプロジェクトも引き続き利用できるということです。その後に続く `jobs`、`steps`、`workflows` という 3 つのキーは、ビルド実行時にあらゆる箇所における詳細なフィードバックレポートを確認できるようにします。詳しくは「[ジョブとステップ]({{ site.baseurl }}/ja/2.0/jobs-steps/)」や「 [Workflows]({{ site.baseurl }}/ja/2.0/workflows/)」ページをご覧ください。
+CircleCI 2.0 の設定ファイルは `version: 2` というキーから始まります。このキーは古い CircleCI 1.0 でビルドしているプロジェクトを CircleCI 2.0 で使えるようにします。言い換えると、他のプロジェクトでは 2.0 を使いながら 1.0 のプロジェクトも引き続き利用できるということです。その後に続く `jobs`、`steps`、`workflows` という 3 つのキーは、ビルド実行時にあらゆる箇所における詳細なフィードバックレポートを確認できるようにします。詳しくは「[ジョブとステップ]({{ site.baseurl }}/2.0/jobs-steps/)」や「 [Workflows]({{ site.baseurl }}/2.0/workflows/)」ページをご覧ください。
 
 ## パラレルジョブの設定例
 
@@ -111,7 +111,7 @@ workflows:
 
 {% endraw %}
 
-これは、マスターブランチでのみ実行するよう設定された `test` ジョブを含むシーケンシャル Workflow の例となります。ジョブ制御のパラレル化、シーケンシャル化、あるいは承認して処理を続行する Workflows について、詳しくは「[Workflows]({{ site.baseurl }}/ja/2.0/workflows) 」ページを参照してください。
+これは、マスターブランチでのみ実行するよう設定された `test` ジョブを含むシーケンシャル Workflow の例となります。ジョブ制御のパラレル化、シーケンシャル化、あるいは承認して処理を続行する Workflows について、詳しくは「[Workflows]({{ site.baseurl }}/2.0/workflows) 」ページを参照してください。
 
 ## ファンイン・ファンアウト Workflow の設定例
 下記は複数の依存関係を元にビルドを行うファンイン・ファンアウト Workflow のサンプルです。この設定ファイルを含むデモプロジェクトは [the complete demo repo on GitHub](https://github.com/CircleCI-Public/circleci-demo-workflows/blob/fan-in-fan-out/.circleci/config.yml) で確認できます。
@@ -229,7 +229,7 @@ workflows:
 
 ## 複数の Executor タイプ (macOS ＋ Docker) を利用する設定例
 
-1 つの Workflow のなかで複数の [Executor タイプ](https://circleci.com/docs/ja/2.0/executor-types/)
+1 つの Workflow のなかで複数の [Executor タイプ](https://circleci.com/ja/docs/2.0/executor-types/)
 を利用できます。 下記の例では、iOS アプリの
 プロジェクトに関する部分を macOS でビルドし、
 それ以外の iOS ツール
@@ -302,4 +302,4 @@ workflows:
 
 ## 関連情報
 
-CircleCI を使用するパブリックプロジェクトのリストについては、「[パブリックリポジトリの例]({{ site.baseurl }}/ja/2.0/example-configs/)」ページを参照してください。
+CircleCI を使用するパブリックプロジェクトのリストについては、「[パブリックリポジトリの例]({{ site.baseurl }}/2.0/example-configs/)」ページを参照してください。

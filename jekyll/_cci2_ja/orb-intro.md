@@ -11,7 +11,7 @@ CircleCI Orbs は、ジョブ、コマンド、Executor のような設定要素
 
 ## Orb をインポートする
 
-既存の Orb をインポートするには、version 2.1 の [.circleci/config.yml]({{ site.baseurl }}/ja/2.0/configuration-reference/) ファイルで、下記のように 1 つの Orb につき設定を 1 行書き加えます。
+既存の Orb をインポートするには、version 2.1 の [.circleci/config.yml]({{ site.baseurl }}/2.0/configuration-reference/) ファイルで、下記のように 1 つの Orb につき設定を 1 行書き加えます。
 
 ```yaml
 version: 2.1
@@ -27,7 +27,7 @@ orbs:
 
 ## 独自に Orb を作成する
 
-既存の Orbs のなかに目的に合うものが見つからないときは、下記の `circleci orb help` コマンドの結果で示されている通り、[CircleCI CLI]({{ site.baseurl }}/ja/2.0/local-cli/) 上で自身の環境や設定要件を満たす独自の Orb を作成できます。 既存の Orb をインポートするのに比べて時間はかかってしまいますが、新たに作成したものは世界中のユーザーに使ってもらえる Orb として公開できます。
+既存の Orbs のなかに目的に合うものが見つからないときは、下記の `circleci orb help` コマンドの結果で示されている通り、[CircleCI CLI]({{ site.baseurl }}/2.0/local-cli/) 上で自身の環境や設定要件を満たす独自の Orb を作成できます。 既存の Orb をインポートするのに比べて時間はかかってしまいますが、新たに作成したものは世界中のユーザーに使ってもらえる Orb として公開できます。
 
 ```
 nohighlight
@@ -87,9 +87,9 @@ orbs:
 **注 :** あなたの組織でサードパーティ製 Orbs を利用するにあたっては、あらかじめ CircleCI の Settings ＞ Security ページにアクセスし、[Orb Security Settings] で [Yes] を選んでおく必要があります。
 
 ## 関連情報
-- 既存の Orbs の使い方については「[Orbs を使用する]({{site.baseurl}}/ja/2.0/using-orbs/)」をご覧ください。
-- 新たに Orb を作成する詳しい手順は「[Orbs を作成する]({{site.baseurl}}/ja/2.0/creating-orbs/)」をご覧ください。
-- 一般的な質問に対する答えをお探しの場合は「[Orbs に関する FAQ]({{site.baseurl}}/ja/2.0/orbs-faq/) 」をご覧ください。
-- 再利用が可能な Orbs、コマンド、パラメータ、Executors の詳しい例については「[コンフィグを再利用する]({{site.baseurl}}/ja/2.0/reusing-config/)」をご覧ください。
+- 既存の Orbs の使い方については「[Orbs を使用する]({{site.baseurl}}/2.0/using-orbs/)」をご覧ください。
+- 新たに Orb を作成する詳しい手順は「[Orbs を作成する]({{site.baseurl}}/2.0/creating-orbs/)」をご覧ください。
+- 一般的な質問に対する答えをお探しの場合は「[Orbs に関する FAQ]({{site.baseurl}}/2.0/orbs-faq/) 」をご覧ください。
+- 再利用が可能な Orbs、コマンド、パラメータ、Executors の詳しい例については「[コンフィグを再利用する]({{site.baseurl}}/2.0/reusing-config/)」をご覧ください。
 - 作成した Orb のテスト方法については、[Orbs をテストする]({{site.baseurl}}/2.0/testing-orbs/) で詳しく解説しています。
 - Orbs 利用時の法的条件に関する詳細については「[Orbs レジストリ](https://circleci.com/orbs/registry/licensing)」をご覧ください。

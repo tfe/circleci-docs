@@ -8,7 +8,7 @@ categories:
 order: 2
 ---
 
-このガイドでは、CircleCI 2.0 で基本的な Haskell アプリケーションを作成する方法について説明します。お急ぎの場合は、以下の設定例をプロジェクトの root ディレクトリにある [`.circleci/config.yml`]({{ site.baseurl }}/ja/2.0/configuration-reference/) にコピーし、ビルドを開始してください。
+このガイドでは、CircleCI 2.0 で基本的な Haskell アプリケーションを作成する方法について説明します。お急ぎの場合は、以下の設定例をプロジェクトの root ディレクトリにある [`.circleci/config.yml`]({{ site.baseurl }}/2.0/configuration-reference/) にコピーし、ビルドを開始してください。
 
 - 目次
 {:toc}
@@ -37,7 +37,7 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          # 依存関係キャッシュについては https://circleci.com/docs/ja/2.0/caching/ をお読みください
+          # 依存関係キャッシュについては https://circleci.com/ja/docs/2.0/caching/ をお読みください
           name: キャッシュされた依存関係を復元
           keys:
             - cci-demo-haskell-v1-{{ checksum "package.yaml" }}-{{ checksum "stack.yaml" }}
@@ -57,7 +57,7 @@ jobs:
             - "/root/.stack"
             - ".stack-work"
       - store_artifacts:
-          # アーティファクト (https://circleci.com/docs/ja/2.0/artifacts/) に表示するテストサマリーをアップロードします
+          # アーティファクト (https://circleci.com/ja/docs/2.0/artifacts/) に表示するテストサマリーをアップロードします
           path: ~/.local/bin/circleci-demo-haskell-exe
           destination: circleci-demo-haskell-exe
 
@@ -67,7 +67,7 @@ jobs:
 
 ## 設定の詳細
 
-`config.yml` は必ず [`version`]({{ site.baseurl }}/ja/2.0/configuration-reference/#version) キーから始まります。 このキーは、互換性を損なう変更に関する警告を表示するために使用されます。
+`config.yml` は必ず [`version`]({{ site.baseurl }}/2.0/configuration-reference/#version) キーから始まります。 このキーは、互換性を損なう変更に関する警告を表示するために使用されます。
 
 ```yaml
 version: 2.1
@@ -75,11 +75,11 @@ version: 2.1
 
 次に、`jobs` キーを置きます。 それぞれのジョブは、ワークフロー内の各段階を表しています。 このサンプルアプリケーションには 1つの `build` ジョブのみが必要なので、このキーの下にすべてのステップとコマンドを置きます。
 
-1回の実行は 1つ以上の[ジョブ]({{ site.baseurl }}/ja/2.0/configuration-reference/#jobs)で構成されます。 この実行では [Workflows]({{ site.baseurl }}/ja/2.0/configuration-reference/#workflows) を使用していないため、`build` ジョブを持つ必要があります。
+1回の実行は 1つ以上の[ジョブ]({{ site.baseurl }}/2.0/configuration-reference/#jobs)で構成されます。 この実行では [Workflows]({{ site.baseurl }}/2.0/configuration-reference/#workflows) を使用していないため、`build` ジョブを持つ必要があります。
 
-ジョブのステップは [Executor]({{ site.baseurl }}/ja/2.0/executor-types/) という名前の仮想環境で実行されます。
+ジョブのステップは [Executor]({{ site.baseurl }}/2.0/executor-types/) という名前の仮想環境で実行されます。
 
-この例では [`docker`]({{ site.baseurl }}/ja/2.0/configuration-reference/#docker) Executor を使用して、カスタム Docker イメージを指定しています。 リストの先頭にあるイメージがジョブの[プライマリコンテナ]({{ site.baseurl }}/ja/2.0/glossary/#primary-container)になります。
+この例では [`docker`]({{ site.baseurl }}/2.0/configuration-reference/#docker) Executor を使用して、カスタム Docker イメージを指定しています。 リストの先頭にあるイメージがジョブの[プライマリコンテナ]({{ site.baseurl }}/2.0/glossary/#primary-container)になります。
 
 ジョブのすべてのコマンドは、このコンテナで実行されます。
 
@@ -136,7 +136,7 @@ jobs:
 
 ```yaml
       - store_artifacts:
-          # アーティファクト (https://circleci.com/docs/ja/2.0/artifacts/) に表示するビルド結果をアップロードします
+          # アーティファクト (https://circleci.com/ja/docs/2.0/artifacts/) に表示するビルド結果をアップロードします
           path: ~/.local/bin/circleci-demo-haskell-exe
           destination: circleci-demo-haskell-exe
 ```
@@ -147,6 +147,6 @@ jobs:
 
 {:.no_toc}
 
-デプロイターゲットの設定例については、「[デプロイの設定]({{ site.baseurl }}/ja/2.0/deployment-integrations/)」を参照してください。
+デプロイターゲットの設定例については、「[デプロイの設定]({{ site.baseurl }}/2.0/deployment-integrations/)」を参照してください。
 
 このガイドでは、Haskell Web アプリの最も単純な設定例を示しました。通常、実際のプロジェクトはこれよりも複雑です。場合によっては、この例で示されている設定をカスタマイズまたは微調整する必要があります (Docker イメージ、使用する[設定](https://docs.haskellstack.org/en/v1.0.2/docker_integration/)、使用する Haskell ビルドツールなど)。 ぜひお試しください。

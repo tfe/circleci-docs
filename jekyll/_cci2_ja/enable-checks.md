@@ -23,7 +23,7 @@ CircleCI Check インテグレーションを使用するには、[Org Setting (
 
 ### 前提条件
 
-- プロジェクトで、[Workflows ]({{ site.baseurl }}/ja/2.0/workflows/)機能を備えた CircleCI 2.0 を使用している必要があります。
+- プロジェクトで、[Workflows ]({{ site.baseurl }}/2.0/workflows/)機能を備えた CircleCI 2.0 を使用している必要があります。
 - CircleCI Checks インテグレーションのインストールを許可するには、GitHub リポジトリの管理者でなければなりません。
 
 ### 手順

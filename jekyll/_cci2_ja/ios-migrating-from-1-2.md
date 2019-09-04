@@ -16,9 +16,9 @@ order: 10
 
 macOS 向け CircleCI 2.0 のリリースに伴い、2.0 プラットフォームで強化された以下の機能が iOS プロジェクトで利用できるようになりました。
 
-* [Workflows](https://circleci.com/docs/ja/2.0/workflows/)：新しいシンプルなキーセットを設定して、ジョブやステップをきわめて柔軟に組織化できます。 迅速なフィードバック、再実行までの時間短縮、リソースの最適化が可能になるため、開発をスピードアップできます。
+* [Workflows](https://circleci.com/ja/docs/2.0/workflows/)：新しいシンプルなキーセットを設定して、ジョブやステップをきわめて柔軟に組織化できます。 迅速なフィードバック、再実行までの時間短縮、リソースの最適化が可能になるため、開発をスピードアップできます。
 
-* [高度なキャッシュ](https://circleci.com/docs/ja/2.0/caching/)：実行ごとにファイルをキャッシュして、ビルドの処理を高速化します。制御しやすいキーと、ジョブ全体のキャッシュの保存・復元ポイントをきめ細かく指定できるキャッシュオプションが提供されています。 制御可能なキーを使用して、実行ごとにあらゆるファイルをキャッシュできます。
+* [高度なキャッシュ](https://circleci.com/ja/docs/2.0/caching/)：実行ごとにファイルをキャッシュして、ビルドの処理を高速化します。制御しやすいキーと、ジョブ全体のキャッシュの保存・復元ポイントをきめ細かく指定できるキャッシュオプションが提供されています。 制御可能なキーを使用して、実行ごとにあらゆるファイルをキャッシュできます。
 
 ## 2.0 iOS プロジェクト設定のサンプル
 
@@ -140,11 +140,11 @@ Gemfile の例を以下に示します。
 ### fastlane match によるコード署名の設定
 {:.no_toc}
 
-CircleCI 2.0 で iOS プロジェクトのコード署名を設定する手順については、\[コード署名に関するガイド\]({{ site.baseurl}}/ja/2.0/ios-codesigning)を参照してください。
+CircleCI 2.0 で iOS プロジェクトのコード署名を設定する手順については、\[コード署名に関するガイド\]({{ site.baseurl}}/2.0/ios-codesigning)を参照してください。
 
 ## 2.0 設定ファイルの作成
 
-以下のセクションでは、iOS プロジェクトの 2.0 設定構文の例を示します。 CircleCI では iOS プロジェクト向けの部分的なコンフィグ変換機能も提供しています。詳細については「\[1.0 から 2.0 への config-translation エンドポイントを使用する\]({{ site.baseurl}}/ja/2.0/config-translation)」を参照してください。 1.0 プロジェクトに `circle.yml` が**ない**場合は、1.0 プロジェクトから初期コンフィグファイルを生成するスクリプトを [CircleCI Config Generator](https://github.com/CircleCI-Public/circleci-config-generator/blob/master/README.md) から入手してください。
+以下のセクションでは、iOS プロジェクトの 2.0 設定構文の例を示します。 CircleCI では iOS プロジェクト向けの部分的なコンフィグ変換機能も提供しています。詳細については「\[1.0 から 2.0 への config-translation エンドポイントを使用する\]({{ site.baseurl}}/2.0/config-translation)」を参照してください。 1.0 プロジェクトに `circle.yml` が**ない**場合は、1.0 プロジェクトから初期コンフィグファイルを生成するスクリプトを [CircleCI Config Generator](https://github.com/CircleCI-Public/circleci-config-generator/blob/master/README.md) から入手してください。
 
 ### ジョブ名と Xcode バージョン
 {:.no_toc}
@@ -175,7 +175,7 @@ CircleCI 2.0 で iOS プロジェクトのコード署名を設定する手順�
           - ...
 
 
-利用できるステップの種類は「[CircleCI を設定する]({{ site.baseurl }}/ja/2.0/configuration-reference/)」で確認できます。 **メモ：**macOS のビルドでは Docker がサポートされていません。
+利用できるステップの種類は「[CircleCI を設定する]({{ site.baseurl }}/2.0/configuration-reference/)」で確認できます。 **メモ：**macOS のビルドでは Docker がサポートされていません。
 
 ### プロジェクトコードのチェックアウト
 {:.no_toc}
@@ -222,7 +222,7 @@ jobs:
 
 {% endraw %}
 
-Gemfile.lock の内容を変更するたびに、新しいキャッシュが作成されます。 キャッシュキーと `checksum` 以外のキーオプションの詳細については、[こちらのドキュメント]({{ site.baseurl }}/ja/2.0/caching/)を参照してください。
+Gemfile.lock の内容を変更するたびに、新しいキャッシュが作成されます。 キャッシュキーと `checksum` 以外のキーオプションの詳細については、[こちらのドキュメント]({{ site.baseurl }}/2.0/caching/)を参照してください。
 
 ### CocoaPods のインストール
 {:.no_toc}
@@ -298,7 +298,7 @@ CircleCI アプリケーションで XML テストの結果を表示させるに
               path: output
 
 
-上記のステップの詳細については、「[ビルドアーティファクトの保存]({{ site.baseurl}}/ja/2.0/artifacts/)」と「[テストメタデータの収集]({{ site.baseurl}}/ja/2.0/collect-test-data/)」を参照してください。
+上記のステップの詳細については、「[ビルドアーティファクトの保存]({{ site.baseurl}}/2.0/artifacts/)」と「[テストメタデータの収集]({{ site.baseurl}}/2.0/collect-test-data/)」を参照してください。
 
 ### Workflows を使用したデプロイ
 {:.no_toc}
@@ -366,7 +366,7 @@ jobs:
 
 上記の例では、CircleCI はリポジトリへのプッシュごとに `build-and-test` ジョブを実行し、`build-and-test` ジョブが正常に完了した後に初めて master ブランチでデプロイジョブを実行します。
 
-Workflows の他の使用例については、[ワークフローの組織化に関するドキュメント]({{ site.baseurl }}/ja/2.0/workflows/)を参照してください。
+Workflows の他の使用例については、[ワークフローの組織化に関するドキュメント]({{ site.baseurl }}/2.0/workflows/)を参照してください。
 
 ## GitHub 上のサンプルアプリケーション
 

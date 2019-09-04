@@ -124,7 +124,7 @@ Docker をインストールした Git を含む Docker イメージを使いた
 
 ## 分離された環境について
 
-ジョブと[リモート Docker]({{ site.baseurl }}/ja/2.0/glossary/#remote-docker)はそれぞれ異なる隔離された環境内で実行されます。 そのため、Docker コンテナはリモート Docker 内で稼働しているコンテナと直接やりとりすることはできません。
+ジョブと[リモート Docker]({{ site.baseurl }}/2.0/glossary/#remote-docker)はそれぞれ異なる隔離された環境内で実行されます。 そのため、Docker コンテナはリモート Docker 内で稼働しているコンテナと直接やりとりすることはできません。
 
 ### サービスへのアクセス方法
 {:.no_toc}
@@ -239,10 +239,10 @@ services:
 
 ## 関連情報
 
-[Docker Layer Caching]({{ site.baseurl }}/ja/2.0/docker-layer-caching/)
+[Docker Layer Caching]({{ site.baseurl }}/2.0/docker-layer-caching/)
 
-[job-space]({{ site.baseurl }}/ja/2.0/glossary/#job-space)
+[job-space]({{ site.baseurl }}/2.0/glossary/#job-space)
 
-[primary-container]({{ site.baseurl }}/ja/2.0/glossary/#primary-container)
+[primary-container]({{ site.baseurl }}/2.0/glossary/#primary-container)
 
-[docker-layer-caching]({{ site.baseurl }}/ja/2.0/glossary/#docker-layer-caching)
+[docker-layer-caching]({{ site.baseurl }}/2.0/glossary/#docker-layer-caching)

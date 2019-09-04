@@ -12,7 +12,7 @@ published: true
 
 #### ビルドコンテナの現在の状況を監視することはできますか？
 
-可能です。詳しくは [Nomad クラスタの運用方法]({{site.baseurl}}/ja/2.0/nomad/)を参照してください。 また、AWS で稼働している場合のコンテナの監視方法については、[サーバー設定、モニタリング、ログ監視]({{site.baseurl}}/ja/2.0/monitoring/) のページをお読みください。
+可能です。詳しくは [Nomad クラスタの運用方法]({{site.baseurl}}/2.0/nomad/)を参照してください。 また、AWS で稼働している場合のコンテナの監視方法については、[サーバー設定、モニタリング、ログ監視]({{site.baseurl}}/2.0/monitoring/) のページをお読みください。
 
 #### 管理者ユーザーの追加方法を教えてください。
 
@@ -44,7 +44,7 @@ $ ifconfig eth0 | grep "inet addr"
 
 #### Nomad クライアント を安全にシャットダウンさせるには？
 
-[Nomad クラスタの運用方法]({{site.baseurl}}/ja/2.0/nomad/)をお読みください。
+[Nomad クラスタの運用方法]({{site.baseurl}}/2.0/nomad/)をお読みください。
 
 #### CircleCI では iOS/macOS アプリケーションのビルドは可能ですか？
 

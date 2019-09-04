@@ -7,7 +7,7 @@ categories: [getting-started]
 order: 1
 ---
 
-ここでは [Orb]({{ site.baseurl }}/ja/2.0/orb-intro/) の基礎的なインポートして使用する例とそれに関連する要素について、下記の流れで解説しています。
+ここでは [Orb]({{ site.baseurl }}/2.0/orb-intro/) の基礎的なインポートして使用する例とそれに関連する要素について、下記の流れで解説しています。
 
 * TOC
 {:toc}
@@ -16,7 +16,7 @@ order: 1
 
 Orbs は CircleCI を手早く使い始めるのに便利なコンフィグパッケージです。Orbs はコンフィグをプロジェクト間で共有したり、標準化を行ったり、簡便にしたりするのに役立ちます。最適なコンフィグのサンプルとして Orbs を活用することもできます。今すぐに使える Orbs を [CircleCI Orbs レジストリ](https://circleci.com/orbs/registry/) でご覧ください。
 
-`orbs` キーを用いることで、バージョン 2.1 の [`.circleci/config.yml`]({{ site.baseurl }}/ja/2.0/configuration-reference/#orbsversion21-が必須) ファイルのなかで Orb を使えるようになります。下記は `circleci` という名前空間にある [`hello-build` orb](https://circleci.com/orbs/registry/orb/circleci/hello-build) を呼び出している例です。
+`orbs` キーを用いることで、バージョン 2.1 の [`.circleci/config.yml`]({{ site.baseurl }}/2.0/configuration-reference/#orbsversion21-が必須) ファイルのなかで Orb を使えるようになります。下記は `circleci` という名前空間にある [`hello-build` orb](https://circleci.com/orbs/registry/orb/circleci/hello-build) を呼び出している例です。
 
 ```
 version: 2.1
@@ -30,7 +30,7 @@ workflows:
           - hello/hello-build
 ```
 
-**注 :** CircleCI 2.1 以前のバージョンで作成されたプロジェクトでは、[Build Processing 設定]({{ site.baseurl }}/ja/2.0/build-processing/) を有効にすることで `orbs` キーを使えるようになります。
+**注 :** CircleCI 2.1 以前のバージョンで作成されたプロジェクトでは、[Build Processing 設定]({{ site.baseurl }}/2.0/build-processing/) を有効にすることで `orbs` キーを使えるようになります。
 
 Orbs は下記の要素で構成されています。
 
@@ -139,6 +139,6 @@ Orbs を使うにあたり、まず Orbs の開発時に用いられた設計方
 ## 関連情報
 {:.no_toc}
 
-- Orbs の具体的な使用方法については「[Orbs とは]({{site.baseurl}}/ja/2.0/orb-intro/)」をご覧ください。
-- 新たに Orb を作成する詳しい手順は「[Orbs を作成する]({{site.baseurl}}/ja/2.0/creating-orbs/)」をご覧ください。
-- 再利用が可能な Orbs、コマンド、パラメータ、Executors の詳しい例については「[コンフィグを再利用する]({{site.baseurl}}/ja/2.0/reusing-config/)」をご覧ください。
+- Orbs の具体的な使用方法については「[Orbs とは]({{site.baseurl}}/2.0/orb-intro/)」をご覧ください。
+- 新たに Orb を作成する詳しい手順は「[Orbs を作成する]({{site.baseurl}}/2.0/creating-orbs/)」をご覧ください。
+- 再利用が可能な Orbs、コマンド、パラメータ、Executors の詳しい例については「[コンフィグを再利用する]({{site.baseurl}}/2.0/reusing-config/)」をご覧ください。

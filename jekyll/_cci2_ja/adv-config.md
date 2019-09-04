@@ -105,4 +105,4 @@ jobs:
 
 ## 関連項目
 
-[最適化]({{ site.baseurl }}/ja/2.0/optimizations/)
+[最適化]({{ site.baseurl }}/2.0/optimizations/)

@@ -4,7 +4,7 @@ title: "Deployment"
 short-title: "Deployment"
 ---
 
-CircleCI は、ほぼすべてのサービスに[デプロイ]({{ site.baseurl }}/ja/2.0/deployment-integrations/)するように設定できます。
+CircleCI は、ほぼすべてのサービスに[デプロイ]({{ site.baseurl }}/2.0/deployment-integrations/)するように設定できます。
 
 ## Amazon Web Services
 

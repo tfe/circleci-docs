@@ -8,7 +8,7 @@ categories:
 order: 2
 ---
 
-このガイドでは、CircleCI 2.0 で Clojure アプリケーションを作成する方法について説明します。お急ぎの場合は、以下の設定例をプロジェクトの root ディレクトリにある [`.circleci/config.yml`]({{ site.baseurl }}/ja/2.0/configuration-reference/) にコピーし、ビルドを開始してください。
+このガイドでは、CircleCI 2.0 で Clojure アプリケーションを作成する方法について説明します。お急ぎの場合は、以下の設定例をプロジェクトの root ディレクトリにある [`.circleci/config.yml`]({{ site.baseurl }}/2.0/configuration-reference/) にコピーし、ビルドを開始してください。
 
 * 目次
 {:toc}
@@ -50,10 +50,10 @@ jobs: # 1回の実行の基本作業単位
             - ~/.m2
           key: cci-demo-clojure-{{ checksum "project.clj" }}
       - run: lein do test, uberjar
-      - store_artifacts: # アーティファクト (https://circleci.com/docs/ja/2.0/artifacts/) に表示するテストサマリーをアップロードします
+      - store_artifacts: # アーティファクト (https://circleci.com/ja/docs/2.0/artifacts/) に表示するテストサマリーをアップロードします
           path: target/uberjar/cci-demo-clojure.jar
           destination: uberjar
-      # デプロイ例については https://circleci.com/docs/ja/2.0/deployment-integrations/ を参照してください
+      # デプロイ例については https://circleci.com/ja/docs/2.0/deployment-integrations/ を参照してください
 ```
 
 {% endraw %}
@@ -96,7 +96,7 @@ version: 2
       - image: circleci/clojure:lein-2.7.1
 ```
 
-`lein-2.7.1` タグを指定して [CircleCI 提供の Clojure イメージ](https://circleci.com/docs/ja/2.0/circleci-images/#clojure)を使用します。
+`lein-2.7.1` タグを指定して [CircleCI 提供の Clojure イメージ](https://circleci.com/ja/docs/2.0/circleci-images/#clojure)を使用します。
 
 ここでは、メモリ不足エラーが発生しないように、`JVM_OPTS` を設定して最大ヒープサイズを制限します。 標準のコンテナの制限は 4 GB ですが、JVM がヒープ外に確保する分と Leiningen 自体のために、いくらかの容量を残しておきます (場合によっては、`lein trampoline ...` を使用して Leiningen のオーバーヘッドを回避できます)。たとえば、データベースまたはキューのためのバックグラウンドコンテナがある場合は、メインの JVM ヒープにメモリを割り当てる際にそれらのコンテナを考慮してください。
 
@@ -146,7 +146,7 @@ version: 2
 
 {:.no_toc}
 
-デプロイターゲットの設定例については、「[デプロイの設定]({{ site.baseurl }}/ja/2.0/deployment-integrations/)」を参照してください。
+デプロイターゲットの設定例については、「[デプロイの設定]({{ site.baseurl }}/2.0/deployment-integrations/)」を参照してください。
 
 ### 詳細な例
 

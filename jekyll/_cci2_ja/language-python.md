@@ -21,11 +21,11 @@ order: 7
 
 ## 設定の詳細説明
 
-すべての CircleCI プロジェクトには、[`.circleci/config.yml`]({{ site.baseurl }}/ja/2.0/configuration-reference/) という設定ファイルが必要です。 以下の手順に従って、完全な `config.yml` ファイルを作成してください。
+すべての CircleCI プロジェクトには、[`.circleci/config.yml`]({{ site.baseurl }}/2.0/configuration-reference/) という設定ファイルが必要です。 以下の手順に従って、完全な `config.yml` ファイルを作成してください。
 
 ### バージョンの指定
 
-`config.yml` は必ず [`version`]({{ site.baseurl }}/ja/2.0/configuration-reference/#version) キーから始まります。 このキーは、互換性を損なう変更に関する警告を表示するために使用されます。
+`config.yml` は必ず [`version`]({{ site.baseurl }}/2.0/configuration-reference/#version) キーから始まります。 このキーは、互換性を損なう変更に関する警告を表示するために使用されます。
 
 ```yaml
 version: 2
@@ -33,9 +33,9 @@ version: 2
 
 ### ビルドジョブの作成
 
-1回の実行は 1つ以上の[ジョブ]({{ site.baseurl }}/ja/2.0/configuration-reference/#jobs)で構成されます。 この実行では [Workflows]({{ site.baseurl }}/ja/2.0/configuration-reference/#workflows) を使用していないため、`build` ジョブを持つ必要があります。
+1回の実行は 1つ以上の[ジョブ]({{ site.baseurl }}/2.0/configuration-reference/#jobs)で構成されます。 この実行では [Workflows]({{ site.baseurl }}/2.0/configuration-reference/#workflows) を使用していないため、`build` ジョブを持つ必要があります。
 
-[`working_directory`]({{ site.baseurl }}/ja/2.0/configuration-reference/#job_name) キーを使用して、ジョブの [`steps`]({{ site.baseurl }}/ja/2.0/configuration-reference/#steps) を実行する場所を指定します。 `working_directory` のデフォルトの値は `~/project` です (`project` は文字列リテラル)。
+[`working_directory`]({{ site.baseurl }}/2.0/configuration-reference/#job_name) キーを使用して、ジョブの [`steps`]({{ site.baseurl }}/2.0/configuration-reference/#steps) を実行する場所を指定します。 `working_directory` のデフォルトの値は `~/project` です (`project` は文字列リテラル)。
 
 ```yaml
 version: 2
@@ -46,9 +46,9 @@ jobs:
 
 ### Executor タイプの選択
 
-ジョブのステップは [Executor]({{ site.baseurl }}/ja/2.0/executor-types/) という名前の仮想環境で実行されます。
+ジョブのステップは [Executor]({{ site.baseurl }}/2.0/executor-types/) という名前の仮想環境で実行されます。
 
-この例では [`docker`]({{ site.baseurl }}/ja/2.0/configuration-reference/#docker) Executor を使用して、カスタム Docker イメージを指定しています。 リストの先頭にあるイメージがジョブの[プライマリコンテナ]({{ site.baseurl }}/ja/2.0/glossary/#primary-container)になります。 ジョブのすべてのコマンドは、このコンテナで実行されます。
+この例では [`docker`]({{ site.baseurl }}/2.0/configuration-reference/#docker) Executor を使用して、カスタム Docker イメージを指定しています。 リストの先頭にあるイメージがジョブの[プライマリコンテナ]({{ site.baseurl }}/2.0/glossary/#primary-container)になります。 ジョブのすべてのコマンドは、このコンテナで実行されます。
 
 ```yaml
 version: 2
@@ -59,11 +59,11 @@ jobs:
       - image: circleci/python:3.6.4  # ビルドジョブのプライマリコンテナ
 ```
 
-**メモ：**`circleci/python:3.6.4` は、CircleCI が提供する[コンビニエンスイメージ]({{ site.baseurl }}/ja/2.0/circleci-images/)です。 これらのイメージは正式な Docker イメージの拡張版で、CI/CD 環境にとって便利なツールが含まれます。
+**メモ：**`circleci/python:3.6.4` は、CircleCI が提供する[コンビニエンスイメージ]({{ site.baseurl }}/2.0/circleci-images/)です。 これらのイメージは正式な Docker イメージの拡張版で、CI/CD 環境にとって便利なツールが含まれます。
 
 ### 他サービスの追加と環境変数の設定
 
-データベースなどのサービス用の追加コンテナを指定します。 [`environment`]({{ site.baseurl }}/ja/2.0/env-vars/#コンテナ内で環境変数を設定する) キーを使用して、コンテナ内のすべてのコマンドで使用される環境変数を設定します。
+データベースなどのサービス用の追加コンテナを指定します。 [`environment`]({{ site.baseurl }}/2.0/env-vars/#コンテナ内で環境変数を設定する) キーを使用して、コンテナ内のすべてのコマンドで使用される環境変数を設定します。
 
 ```yaml
 version: 2
@@ -83,11 +83,11 @@ jobs:
 
 ### 依存関係のインストール
 
-ジョブのコンテナを選択したら、いくつかのコマンドを実行する [`steps`]({{ site.baseurl }}/ja/2.0/configuration-reference/#steps) を作成します。
+ジョブのコンテナを選択したら、いくつかのコマンドを実行する [`steps`]({{ site.baseurl }}/2.0/configuration-reference/#steps) を作成します。
 
-[`checkout`]({{ site.baseurl }}/ja/2.0/configuration-reference/#checkout) ステップを使用して、ソースコードをチェックアウトします。 デフォルトでは、`working_directory` で指定されたパスにソースコードがチェックアウトされます。
+[`checkout`]({{ site.baseurl }}/2.0/configuration-reference/#checkout) ステップを使用して、ソースコードをチェックアウトします。 デフォルトでは、`working_directory` で指定されたパスにソースコードがチェックアウトされます。
 
-[`run`]({{ site.baseurl }}/ja/2.0/configuration-reference/#run) ステップを使用して、bash コマンドを実行します。 この例では、[Pipenv](https://pipenv.readthedocs.io/en/latest/) を使用して仮想環境を作成し、Python パッケージをインストールします。
+[`run`]({{ site.baseurl }}/2.0/configuration-reference/#run) ステップを使用して、bash コマンドを実行します。 この例では、[Pipenv](https://pipenv.readthedocs.io/en/latest/) を使用して仮想環境を作成し、Python パッケージをインストールします。
 
 ```yaml
 version: 2
@@ -104,11 +104,11 @@ jobs:
 
 ### 依存関係のキャッシュ
 
-実行の間隔を短縮するには、[依存関係またはソースコードのキャッシュ]({{ site.baseurl }}/ja/2.0/caching/)を検討してください。
+実行の間隔を短縮するには、[依存関係またはソースコードのキャッシュ]({{ site.baseurl }}/2.0/caching/)を検討してください。
 
-[`save_cache`]({{ site.baseurl }}/ja/2.0/configuration-reference/#save_cache) ステップを使用して、いくつかのファイルまたはディレクトリをキャッシュします。 この例では、仮想環境とインストールされたパッケージがキャッシュされます。
+[`save_cache`]({{ site.baseurl }}/2.0/configuration-reference/#save_cache) ステップを使用して、いくつかのファイルまたはディレクトリをキャッシュします。 この例では、仮想環境とインストールされたパッケージがキャッシュされます。
 
-[`restore_cache`]({{ site.baseurl }}/ja/2.0/configuration-reference/#restore_cache) ステップを使用して、キャッシュされたファイルまたはディレクトリを復元します。
+[`restore_cache`]({{ site.baseurl }}/2.0/configuration-reference/#restore_cache) ステップを使用して、キャッシュされたファイルまたはディレクトリを復元します。
 
 {% raw %}
 
@@ -157,9 +157,9 @@ jobs:
 
 ### テスト結果のアップロードおよび保存
 
-[`store_test_results`]({{ site.baseurl }}/ja/2.0/configuration-reference/#store_test_results) ステップを使用して、テスト結果を CircleCI にアップロードします。 この結果は、CircleCI アプリケーションの**テストサマリー**セクションに表示されます。
+[`store_test_results`]({{ site.baseurl }}/2.0/configuration-reference/#store_test_results) ステップを使用して、テスト結果を CircleCI にアップロードします。 この結果は、CircleCI アプリケーションの**テストサマリー**セクションに表示されます。
 
-[`store_artifacts`]({{ site.baseurl }}/ja/2.0/configuration-reference/#store_artifacts) ステップを使用して、テスト結果をアーティファクトとして保存します。
+[`store_artifacts`]({{ site.baseurl }}/2.0/configuration-reference/#store_artifacts) ステップを使用して、テスト結果をアーティファクトとして保存します。
 
 ```yaml
 version: 2
@@ -177,7 +177,7 @@ jobs:
 
 ### アプリケーションのデプロイ
 
-この Django アプリケーションはどこにもデプロイされません。 デプロイの例については、[Flask を使用したプロジェクトのチュートリアル]({{ site.baseurl }}/ja/2.0/project-walkthrough/)または[デプロイに関するドキュメント]({{ site.baseurl }}/ja/2.0/deployment-integrations/)を参照してください。
+この Django アプリケーションはどこにもデプロイされません。 デプロイの例については、[Flask を使用したプロジェクトのチュートリアル]({{ site.baseurl }}/2.0/project-walkthrough/)または[デプロイに関するドキュメント]({{ site.baseurl }}/2.0/deployment-integrations/)を参照してください。
 
 ## 完全な設定ファイル
 
@@ -205,7 +205,7 @@ jobs: # 1回の実行の基本作業単位
       - run: sudo chown -R circleci:circleci /usr/local/bin
       - run: sudo chown -R circleci:circleci /usr/local/lib/python3.6/site-packages
       - restore_cache:
-      # 依存関係キャッシュについては https://circleci.com/docs/ja/2.0/caching/ をお読みください
+      # 依存関係キャッシュについては https://circleci.com/ja/docs/2.0/caching/ をお読みください
           key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
       - run:
           command: |
@@ -220,9 +220,9 @@ jobs: # 1回の実行の基本作業単位
       - run:
           command: |
             pipenv run python manage.py test
-      - store_test_results: # テストサマリー (https://circleci.com/docs/ja/2.0/collect-test-data/) に表示するテスト結果をアップロードします
+      - store_test_results: # テストサマリー (https://circleci.com/ja/docs/2.0/collect-test-data/) に表示するテスト結果をアップロードします
           path: test-results
-      - store_artifacts: # アーティファクト (https://circleci.com/docs/ja/2.0/artifacts/) に表示するテストサマリーをアップロードします
+      - store_artifacts: # アーティファクト (https://circleci.com/ja/docs/2.0/artifacts/) に表示するテストサマリーをアップロードします
           path: test-results
           destination: tr1
 ```
@@ -231,4 +231,4 @@ jobs: # 1回の実行の基本作業単位
 
 ## 関連項目
 
-- 他の言語ガイドについては、「[チュートリアル]({{ site.baseurl }}/ja/2.0/tutorials/)」を参照してください。
+- 他の言語ガイドについては、「[チュートリアル]({{ site.baseurl }}/2.0/tutorials/)」を参照してください。

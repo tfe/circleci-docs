@@ -23,7 +23,7 @@ order: 20
 
 {:.no_toc}
 
-- CircleCI にプロジェクトを追加します。詳細については「[Hello World]({{ site.baseurl }}/ja/2.0/hello-world/)」を参照してください。
+- CircleCI にプロジェクトを追加します。詳細については「[Hello World]({{ site.baseurl }}/2.0/hello-world/)」を参照してください。
 - このチュートリアルは、対象のプロジェクト用の Xcode ワークスペースに少なくとも 1つの共有スキームがあり、選択されたスキームにテストアクションがあることを前提としています。 まだ共有スキームがない場合は、以下の手順に従って Xcode に共有スキームを追加してください。
 
 1. プロジェクトの Xcode ワークスペースを開きます。
@@ -50,13 +50,13 @@ iOS プロジェクトでは、fastlane Scan を使用して以下のように�
 
 
 
-サポートされるバージョンの一覧は、iOS アプリのテストに関するドキュメントの「[サポートされている Xcode のバージョン]({{ site.baseurl }}/ja/2.0/testing-ios/#supported-xcode-versions)」セクションで確認してください。
+サポートされるバージョンの一覧は、iOS アプリのテストに関するドキュメントの「[サポートされている Xcode のバージョン]({{ site.baseurl }}/2.0/testing-ios/#supported-xcode-versions)」セクションで確認してください。
 
 ## コード署名と証明書
 
-詳細については「[iOS プロジェクトのコード署名の設定]({{ site.baseurl }}/ja/2.0/ios-codesigning/)」を参照してください。
+詳細については「[iOS プロジェクトのコード署名の設定]({{ site.baseurl }}/2.0/ios-codesigning/)」を参照してください。
 
-カスタムツールの使用や独自スクリプトの実行を目的としてビルドプロセスをさらにカスタマイズする場合は、`config.yml` ファイルを使用します。カスタマイズの詳細については「[2.0 config.yml の設定例]({{ site.baseurl }}/ja/2.0/sample-config/)」を参照してください。
+カスタムツールの使用や独自スクリプトの実行を目的としてビルドプロセスをさらにカスタマイズする場合は、`config.yml` ファイルを使用します。カスタマイズの詳細については「[2.0 config.yml の設定例]({{ site.baseurl }}/2.0/sample-config/)」を参照してください。
 
 ## 依存関係のインストール
 
@@ -118,7 +118,7 @@ iOS プロジェクトでは、fastlane Scan を使用して以下のように�
 
 ## 高度な設定
 
-iOS プロジェクトの高度な設定の詳細については、[macOS 上の iOS アプリケーションのテストに関するドキュメント](https://circleci.com/docs/ja/2.0/testing-ios/)を参照してください。
+iOS プロジェクトの高度な設定の詳細については、[macOS 上の iOS アプリケーションのテストに関するドキュメント](https://circleci.com/ja/docs/2.0/testing-ios/)を参照してください。
 
 ## GitHub 上のサンプルアプリケーション
 

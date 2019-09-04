@@ -8,7 +8,7 @@ categories:
 order: 3
 ---
 
-CircleCI では、Docker イメージにインストール可能な任意のバージョンの Go を使用して、Go プロジェクトをビルドできます。 お急ぎの場合は、以下の設定例をプロジェクトの root ディレクトリにある [`.circleci/config.yml`]({{ site.baseurl }}/ja/2.0/configuration-reference/) にコピーし、ビルドを開始してください。
+CircleCI では、Docker イメージにインストール可能な任意のバージョンの Go を使用して、Go プロジェクトをビルドできます。 お急ぎの場合は、以下の設定例をプロジェクトの root ディレクトリにある [`.circleci/config.yml`]({{ site.baseurl }}/2.0/configuration-reference/) にコピーし、ビルドを開始してください。
 
 - 目次
 {:toc}
@@ -50,7 +50,7 @@ jobs: # 1回の実行の基本作業単位
       - run: mkdir -p $TEST_RESULTS # テスト結果を保存するディレクトリを作成します
 
       - restore_cache: # 前回の実行以降の変更が検出されなかった場合、保存されているキャッシュを復元します
-      # 依存関係キャッシュについては https://circleci.com/docs/ja/2.0/caching/ をお読みください
+      # 依存関係キャッシュについては https://circleci.com/ja/docs/2.0/caching/ をお読みください
           keys:
             - v1-pkg-cache
 
@@ -106,11 +106,11 @@ jobs: # 1回の実行の基本作業単位
             sleep 5
             curl --retry 10 --retry-delay 1 -X POST --header "Content-Type: application/json" -d '{"email":"test@example.com","name":"Test User"}' http://localhost:8080/contacts
 
-      - store_artifacts: # アーティファクト (https://circleci.com/docs/ja/2.0/artifacts/) に表示するテストサマリーをアップロードします
+      - store_artifacts: # アーティファクト (https://circleci.com/ja/docs/2.0/artifacts/) に表示するテストサマリーをアップロードします
           path: /tmp/test-results
           destination: raw-test-output
 
-      - store_test_results: # テストサマリー (https://circleci.com/docs/ja/2.0/collect-test-data/) に表示するテスト結果をアップロードします
+      - store_test_results: # テストサマリー (https://circleci.com/ja/docs/2.0/collect-test-data/) に表示するテスト結果をアップロードします
           path: /tmp/test-results
 ```
 
@@ -132,7 +132,7 @@ CircleCI を初めて使用する際は、プロジェクトをご自身でビ�
 2. CircleCI で [[Add Projects (プロジェクトの追加)](https://circleci.com/add-projects){:rel="nofollow"}] ページにアクセスし、フォークしたプロジェクトの横にある [Build Project (プロジェクトのビルド)] ボタンをクリックします。
 3. 変更を加えるには、`.circleci/config.yml` ファイルを編集してコミットします。 コミットを GitHub にプッシュすると、CircleCI がそのプロジェクトをビルドしてテストします。
 
-変更をローカルでテストする場合は、[CircleCI の CLI ツール](https://circleci.com/docs/ja/2.0/local-jobs/)を使用して `circleci build` を実行します。
+変更をローカルでテストする場合は、[CircleCI の CLI ツール](https://circleci.com/ja/docs/2.0/local-jobs/)を使用して `circleci build` を実行します。
 
 * * *
 
@@ -140,7 +140,7 @@ CircleCI を初めて使用する際は、プロジェクトをご自身でビ�
 
 このセクションでは、`.circleci/config.yml` 内のコマンドについて説明します。
 
-`config.yml` は必ず [`version`]({{ site.baseurl }}/ja/2.0/configuration-reference/#version) キーから始まります。 このキーは、互換性を損なう変更に関する警告を表示するために使用されます。
+`config.yml` は必ず [`version`]({{ site.baseurl }}/2.0/configuration-reference/#version) キーから始まります。 このキーは、互換性を損なう変更に関する警告を表示するために使用されます。
 
 ```yaml
 version: 2
@@ -159,7 +159,7 @@ jobs:
 
 他のディレクトリが指定されない限り、以降の `job` ではこのパスがデフォルトの作業ディレクトリとして使用されます。
 
-`working_directory` のすぐ下の `docker` で、このジョブの[プライマリコンテナ]({{ site.baseurl }}/ja/2.0/glossary/#primary-container)イメージを指定します。
+`working_directory` のすぐ下の `docker` で、このジョブの[プライマリコンテナ]({{ site.baseurl }}/2.0/glossary/#primary-container)イメージを指定します。
 
 ```yaml
     docker:
@@ -186,7 +186,7 @@ Docker を設定したら、テスト結果のパスを保存する環境変数�
 
 この `build` ジョブ内にいくつかの `steps` を追加する必要があります。
 
-[`checkout`]({{ site.baseurl }}/ja/2.0/configuration-reference/#checkout) ステップを使用して、ソースコードをチェックアウトします。 デフォルトでは、`working_directory` で指定されたパスにソースコードがチェックアウトされます。
+[`checkout`]({{ site.baseurl }}/2.0/configuration-reference/#checkout) ステップを使用して、ソースコードをチェックアウトします。 デフォルトでは、`working_directory` で指定されたパスにソースコードがチェックアウトされます。
 
 ```yaml
     steps:
@@ -245,7 +245,7 @@ JUnit レポート作成ツールの Go 実装とアプリケーションの他�
             make test | tee ${TEST_RESULTS}/go-test.out
 ```
 
-このプロジェクトでは、`make` を使用してビルドとテストを行っているため、`make test` を実行するだけです (`Makefile` の内容は[こちらのページ](https://github.com/CircleCI-Public/circleci-demo-go/blob/master/Makefile)で参照)。 テスト結果を収集して後からアップロードするために、ここでは `go-junit-report` を使用します (テスト結果の詳細については[プロジェクトのチュートリアル]({{ site.baseurl }}/ja/2.0/project-walkthrough/)を参照)。
+このプロジェクトでは、`make` を使用してビルドとテストを行っているため、`make test` を実行するだけです (`Makefile` の内容は[こちらのページ](https://github.com/CircleCI-Public/circleci-demo-go/blob/master/Makefile)で参照)。 テスト結果を収集して後からアップロードするために、ここでは `go-junit-report` を使用します (テスト結果の詳細については[プロジェクトのチュートリアル]({{ site.baseurl }}/2.0/project-walkthrough/)を参照)。
 
 ```bash
 make test | go-junit-report > ${TEST_RESULTS}/go-test-report.xml
@@ -296,6 +296,6 @@ make test | tee ${TEST_RESULTS}/go-test.out
 
 ## 関連項目
 
-デプロイターゲットの設定例については、「[デプロイの設定]({{ site.baseurl }}/ja/2.0/deployment-integrations/)」を参照してください。
+デプロイターゲットの設定例については、「[デプロイの設定]({{ site.baseurl }}/2.0/deployment-integrations/)」を参照してください。
 
-キャッシュの詳細については、「[依存関係のキャッシュ]({{ site.baseurl }}/ja/2.0/caching/)」を参照してください。
+キャッシュの詳細については、「[依存関係のキャッシュ]({{ site.baseurl }}/2.0/caching/)」を参照してください。

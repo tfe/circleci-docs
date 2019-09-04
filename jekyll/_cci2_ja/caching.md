@@ -41,7 +41,7 @@ CircleCI 2.0 では依存関係のキャッシュの自動化には対応して�
 ここでは、そのメリットとデメリットも含め、正しく利用するためのキャッシュの手動設定の仕方について説明しています。
 **注：** CircleCI 2.0 のジョブ実行に使われる Docker イメージは、サーバーインフラ上で自動的にキャッシュされる場合があります。
 
-Docker イメージの未変更レイヤー部分を再利用する有償のキャッシュ機能については、[Docker レイヤーキャッシュの利用]({{ site.baseurl }}/ja/2.0/docker-layer-caching/)をご覧ください。
+Docker イメージの未変更レイヤー部分を再利用する有償のキャッシュ機能については、[Docker レイヤーキャッシュの利用]({{ site.baseurl }}/2.0/docker-layer-caching/)をご覧ください。
 
 ## 概要
 {:.no_toc}
@@ -55,7 +55,7 @@ Docker イメージの未変更レイヤー部分を再利用する有償のキ�
 ## ライブラリのキャッシュ
 
 ジョブ処理における依存関係でキャッシュが最も効果的に働くのは、プロジェクトで使われているライブラリです。 例えば、Python の `pip` や Node.js の `npm` のような依存関係管理ツールがインストールするライブラリをキャッシュするというものです。 これら `pip` や `npm` などの依存関係管理ツールは、依存関係のインストール先となるディレクトリを個別に用意しています。 自身のプロジェクトや環境に応じた詳しい情報については、下記の開発言語ごとのガイドマニュアルとデモプロジェクトをご覧ください。
-<https://circleci.com/docs/ja/2.0/demo-apps/>
+<https://circleci.com/ja/docs/2.0/demo-apps/>
 
 現在のプロジェクトで必要になるツールがわからない場合でも、Docker イメージが解決してくれます。 CircleCI があらかじめ用意しているビルド済み Docker イメージには、そのプロジェクトで使われている開発言語に合わせて一般的に必要となるツールが含まれています。 たとえば、`circleci/ruby:2.4.1` というビルド済みイメージには git、openssh-client、gzip がプリインストールされています。
 
@@ -146,7 +146,7 @@ keys 内の 2 番目の項目が 1 番目よりも短いのは、その方が現
 
 ## 依存関係のキャッシュにおける基礎
 
-CircleCI 2.0 で利用できる、強力でカスタマイズ性の高い依存関係のキャッシュを活用するには、何を、どうキャッシュするかという明確な目的をもっていなくてはなりません。具体例は CircleCI の設定方法のページ内にある [キャッシュの保存]({{ site.baseurl }}/ja/2.0/configuration-reference/#save_cache) のセクションをご覧ください。
+CircleCI 2.0 で利用できる、強力でカスタマイズ性の高い依存関係のキャッシュを活用するには、何を、どうキャッシュするかという明確な目的をもっていなくてはなりません。具体例は CircleCI の設定方法のページ内にある [キャッシュの保存]({{ site.baseurl }}/2.0/configuration-reference/#save_cache) のセクションをご覧ください。
 
 ファイルやディレクトリのキャッシュを保存するには、`.circleci/config.yml` ファイルで指定している ジョブに `save_cache` ステップを追加します。
 
@@ -162,7 +162,7 @@ CircleCI 2.0 で利用できる、強力でカスタマイズ性の高い依存�
 ディレクトリはジョブにおける `working_directory` への相対パス、または絶対パスを指定します。
 
 **注：**
-特別な [`persist_to_workspace`]({{ site.baseurl }}/ja/2.0/configuration-reference/#persist_to_workspace) ステップとは違って `save_cache` も `restore_cache` も `paths` キーに対してワイルドカードによるグロブをサポートしません。
+特別な [`persist_to_workspace`]({{ site.baseurl }}/2.0/configuration-reference/#persist_to_workspace) ステップとは違って `save_cache` も `restore_cache` も `paths` キーに対してワイルドカードによるグロブをサポートしません。
 
 ## キーとテンプレートを使用する
 
@@ -183,10 +183,10 @@ CircleCI 2.0 で利用できる、強力でカスタマイズ性の高い依存�
 {% raw %}`{{ .Branch }}`{% endraw %} | 現在ビルドを実行しているバージョン管理システムのブランチ名。
 {% raw %}`{{ .BuildNum }}`{% endraw %} | 実行中のビルドにおける CircleCI のジョブ番号。
 {% raw %}`{{ .Revision }}`{% endraw %} | 現在ビルドを実行しているバージョン管理システムのリビジョン。
-{% raw %}`{{ .Environment.variableName }}`{% endraw %} | `variableName` で示される環境変数 ([定義済み環境変数]({{ site.baseurl }}/ja/2.0/env-vars/)、もしくは[コンテキスト]({{ site.baseurl }}/ja/2.0/contexts)を指定できますが、ユーザー定義の環境変数は使えません)。
+{% raw %}`{{ .Environment.variableName }}`{% endraw %} | `variableName` で示される環境変数 ([定義済み環境変数]({{ site.baseurl }}/2.0/env-vars/)、もしくは[コンテキスト]({{ site.baseurl }}/2.0/contexts)を指定できますが、ユーザー定義の環境変数は使えません)。
 {% raw %}`{{ checksum "filename" }}`{% endraw %} | filename で指定したファイル内容の SHA256 ハッシュを Base64 エンコードしたもの。ファイル内容に変更があるとキャッシュキーも新たに生成されます。 ここで指定できるのはリポジトリでコミットされているファイルに限られるため、 `package-lock.json` や `pom.xml`、もしくは `project.clj` などの依存関係を定義しているマニフェストファイルを使うことも検討してください。 また、`restore_cache` から `save_cache` までの処理でファイル内容が変わらないようにします。そうしないと `restore_cache` のタイミングで使われるファイルとは異なるキャッシュキーを元にキャッシュが保存されることになります。
 {% raw %}`{{ epoch }}`{% endraw %} | 協定世界時 (UTC) における 1970 年 1 月 1 日午前 0 時 0 分 0 秒からの経過秒数。POSIX 時間や UNIX 時間と同じです。
-{% raw %}`{{ arch }}`{% endraw %} | OS と CPU の種類。 OS や CPU アーキテクチャに合わせてコンパイル済みバイナリをキャッシュするような場合に用います。`darwin amd64` あるいは `linux amd64` のような文字列になります。 CircleCI で利用可能な CPU については[こちら]({{ site.baseurl }}/ja/2.0/faq/#circleci-がサポートしている-cpu-アーキテクチャは)を参照してください
+{% raw %}`{{ arch }}`{% endraw %} | OS と CPU の種類。 OS や CPU アーキテクチャに合わせてコンパイル済みバイナリをキャッシュするような場合に用います。`darwin amd64` あるいは `linux amd64` のような文字列になります。 CircleCI で利用可能な CPU については[こちら]({{ site.baseurl }}/2.0/faq/#circleci-がサポートしている-cpu-アーキテクチャは)を参照してください
 {: class="table table-striped"}
 
 **注：** キャッシュに対してユニークな識別子を定義する際には、{% raw %}`{{ epoch }}`{% endraw %} のような厳密すぎる値になるテンプレートをむやみに使わないよう注意してください。 {% raw %}`{{ .Branch }}`{% endraw %} や {% raw %}`{{ checksum "filename" }}`{% endraw %} といった汎用性の高い値になるテンプレートを使うと、使われるキャッシュの数は増えます。 これについては、以降で説明するようにトレードオフの関係にあると言えます。
@@ -493,4 +493,4 @@ steps:
 ## 関連情報
 {:.no_toc}
 
-[最適化]({{ site.baseurl }}/ja/2.0/optimizations/)
+[最適化]({{ site.baseurl }}/2.0/optimizations/)

@@ -9,9 +9,9 @@ order: 1
 
 ## はじめに
 
-Orbs は、複数のプロジェクト間で共有できる CircleCI 構成の再利用可能パッケージです。カプセル化およびパラメーター化されたコマンド、ジョブ、および Executor を作成して、[複数のプロジェクトで使用]({{ site.baseurl }}/ja/2.0/using-orbs/)できます。
+Orbs は、複数のプロジェクト間で共有できる CircleCI 構成の再利用可能パッケージです。カプセル化およびパラメーター化されたコマンド、ジョブ、および Executor を作成して、[複数のプロジェクトで使用]({{ site.baseurl }}/2.0/using-orbs/)できます。
 
-[Orbs]({{ site.baseurl }}/ja/2.0/orb-intro/) は、2.1 [.circleci/config.yml]({{ site.baseurl }}/ja/2.0/configuration-reference/) ファイルのトップレベルにある `orbs` キーを通して構成内で使用されます。
+[Orbs]({{ site.baseurl }}/2.0/orb-intro/) は、2.1 [.circleci/config.yml]({{ site.baseurl }}/2.0/configuration-reference/) ファイルのトップレベルにある `orbs` キーを通して構成内で使用されます。
 
 ### Orbs クイックスタート
 
@@ -45,11 +45,11 @@ Orbs を使用する前に、Orbs パブリッシュプロセス全体につい�
 
 #### ステップ 1 - CircleCI CLI を準備する
 
-[`orbs-tool`](https://circleci.com/docs/ja/2.0/creating-orbs/#orb-toolspublish) Orb を使用して Orb パブリッシュの CI/CD を行うことはできますが、CircleCI CLI を使用した方がより直接的かつ反復的に Orbs のビルド、パブリッシュ、およびテストを行うことができます。 詳しい手順は、このページの「[新しい CircleCI CLI の取得](https://circleci.com/docs/ja/2.0/creating-orbs/#get-the-new-circleci-cli)」セクションに記載されています。
+[`orbs-tool`](https://circleci.com/ja/docs/2.0/creating-orbs/#orb-toolspublish) Orb を使用して Orb パブリッシュの CI/CD を行うことはできますが、CircleCI CLI を使用した方がより直接的かつ反復的に Orbs のビルド、パブリッシュ、およびテストを行うことができます。 詳しい手順は、このページの「[新しい CircleCI CLI の取得](https://circleci.com/ja/docs/2.0/creating-orbs/#get-the-new-circleci-cli)」セクションに記載されています。
 
-- [CircleCI CLI のダウンロードとインストール](https://circleci.com/docs/ja/2.0/creating-orbs/#installing-the-cli-for-the-first-time)
-- [CLI の更新](https://circleci.com/docs/ja/2.0/creating-orbs/#updating-the-circleci-cli-after-installation)
-- [CLI の設定](https://circleci.com/docs/ja/2.0/creating-orbs/#circleci-cli-の設定)
+- [CircleCI CLI のダウンロードとインストール](https://circleci.com/ja/docs/2.0/creating-orbs/#installing-the-cli-for-the-first-time)
+- [CLI の更新](https://circleci.com/ja/docs/2.0/creating-orbs/#updating-the-circleci-cli-after-installation)
+- [CLI の設定](https://circleci.com/ja/docs/2.0/creating-orbs/#circleci-cli-の設定)
 
 #### ステップ 2 - CLI が正しくインストールされていることを検証する
 
@@ -65,17 +65,17 @@ CircleCI CLI を設定したら、Orbs を使用する前に、CLI が正しく�
 
 #### ステップ 5 - Orb を設計する
 
-インラインテンプレートを使用するか、インラインテンプレートとは別に Orb をオーサリングするかに応じて、いくつかのエレメント (ジョブ、コマンド、Executor) を Orb に追加します。 これらの Orb エレメントの詳細については、「[Orbs を使う](https://circleci.com/docs/ja/2.0/using-orbs/#section=configuration)」ページの「[コマンド](https://circleci.com/docs/ja/2.0/using-orbs/#%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89)」、「[ジョブ](https://circleci.com/docs/ja/2.0/using-orbs/#%E3%82%B8%E3%83%A7%E3%83%96)」、「[Executors](https://circleci.com/docs/ja/2.0/using-orbs/#executors)」の各セクションを参照してください。
+インラインテンプレートを使用するか、インラインテンプレートとは別に Orb をオーサリングするかに応じて、いくつかのエレメント (ジョブ、コマンド、Executor) を Orb に追加します。 これらの Orb エレメントの詳細については、「[Orbs を使う](https://circleci.com/ja/docs/2.0/using-orbs/#section=configuration)」ページの「[コマンド](https://circleci.com/ja/docs/2.0/using-orbs/#%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89)」、「[ジョブ](https://circleci.com/ja/docs/2.0/using-orbs/#%E3%82%B8%E3%83%A7%E3%83%96)」、「[Executors](https://circleci.com/ja/docs/2.0/using-orbs/#executors)」の各セクションを参照してください。
 
 #### ステップ 6 - Orb をバリデーションする
 
-Orb のオーサリングが終了したら、CLI から `validate` コマンドを実行するだけです。 CircleCI は、`circleci/orb-tools` Orb など、Orb をバリデーションするためのさまざまなツールを提供しています。 `circleci/orb-tools` Orb の使用方法については、このページの「[Orb をバリデーションおよびパブリッシュする](https://circleci.com/docs/ja/2.0/creating-orbs/#validate-and-publish-your-orb)」を参照してください。
+Orb のオーサリングが終了したら、CLI から `validate` コマンドを実行するだけです。 CircleCI は、`circleci/orb-tools` Orb など、Orb をバリデーションするためのさまざまなツールを提供しています。 `circleci/orb-tools` Orb の使用方法については、このページの「[Orb をバリデーションおよびパブリッシュする](https://circleci.com/ja/docs/2.0/creating-orbs/#validate-and-publish-your-orb)」を参照してください。
 
 #### ステップ 7 - Orb をパブリッシュする
 
 Orb パブリッシュプロセスの最終ステップは、`circleci/orb-tools` Orb の `orb-tools/publish` CLI コマンドを使用して Orb をパブリッシュすることです。 `dev` Orb バージョンでは、1つの Orb 名の複数バージョンをパブリッシュできることに注意してください (`dev` Orbs は可変形式)。
 
-このコマンドの詳細については、このページの「[orb-tools/publish](https://circleci.com/docs/ja/2.0/creating-orbs/#orb-toolspublish)」セクションを参照してください。
+このコマンドの詳細については、このページの「[orb-tools/publish](https://circleci.com/ja/docs/2.0/creating-orbs/#orb-toolspublish)」セクションを参照してください。
 
 ## 概要
 
@@ -131,7 +131,7 @@ Orb オーサーは、セマンティックバージョニングに従う必要�
 - ジョブのみの Orbs を使用しない - ジョブのみの Orbs は柔軟性に欠けます。 そうした Orbs が適切な場合もありますが、ユーザーが独自のジョブでコマンドを使用できないことを不満に思う可能性があります。 ジョブを起動する前後のステップはユーザーにとって 1つの回避策になります。
 - `steps` パラメーターは強力 - ユーザーから提供されるステップをラップすることで、キャッシュ戦略やさらに複雑なタスクなどをカプセル化および容易化することができ、ユーザーに大きな価値をもたらします。
 
-Orbs 内のコマンド、Executors、パラメーターの詳細と例については、「[コンフィグの再利用]({{ site.baseurl }}/ja/2.0/reusing-config/)」を参照してください。
+Orbs 内のコマンド、Executors、パラメーターの詳細と例については、「[コンフィグの再利用]({{ site.baseurl }}/2.0/reusing-config/)」を参照してください。
 
 独自の Orb を開発する際は、インライン Orb を作成すると便利なことがあります。 次のセクションでは、独自のインライン Orb の記述方法について説明します。
 
@@ -463,7 +463,7 @@ CLI のすべてのヘルプコマンドの一覧は、[CircleCI CLI ヘルプ](
 
 ### CircleCI の設定
 
-プロジェクトの CircleCI アプリケーションの [Settings (設定)] ページで、[ビルド処理]({{ site.baseurl }}/ja/2.0/build-processing/)が有効になっている必要があります (デフォルトではすべての新しいプロジェクトに対して有効)。 また、組織オーナーが CircleCI アプリケーションの [Security (セキュリティ)] ページの [Settings (設定)] タブで、組織内の未承認 Orbs の使用をオプトインしている必要があります。
+プロジェクトの CircleCI アプリケーションの [Settings (設定)] ページで、[ビルド処理]({{ site.baseurl }}/2.0/build-processing/)が有効になっている必要があります (デフォルトではすべての新しいプロジェクトに対して有効)。 また、組織オーナーが CircleCI アプリケーションの [Security (セキュリティ)] ページの [Settings (設定)] タブで、組織内の未承認 Orbs の使用をオプトインしている必要があります。
 
 ### 新しい CircleCI CLI の取得
 
@@ -756,9 +756,9 @@ workflows:
 
 ## 関連項目
 
-- 「[Orbs を使う]({{site.baseurl}}/ja/2.0/using-orbs/)」には、既存の Orbs の使用方法が記載されています。
-- 「[Orbs に関するよくある質問]({{site.baseurl}}/ja/2.0/orbs-faq/)」には、よく寄せられる質問とそれに対する回答が掲載されています。
-- 「[コンフィグの再利用]({{site.baseurl}}/ja/2.0/reusing-config/)」には、再利用可能な Orbs、コマンド、パラメーター、および Executors の詳細が記載されています。
-- 「[CircleCI Orbs のテスト]({{site.baseurl}}/ja/2.0/testing-orbs/)」には、作成した Orbs をテストする方法が記載されています。
+- 「[Orbs を使う]({{site.baseurl}}/2.0/using-orbs/)」には、既存の Orbs の使用方法が記載されています。
+- 「[Orbs に関するよくある質問]({{site.baseurl}}/2.0/orbs-faq/)」には、よく寄せられる質問とそれに対する回答が掲載されています。
+- 「[コンフィグの再利用]({{site.baseurl}}/2.0/reusing-config/)」には、再利用可能な Orbs、コマンド、パラメーター、および Executors の詳細が記載されています。
+- 「[CircleCI Orbs のテスト]({{site.baseurl}}/2.0/testing-orbs/)」には、作成した Orbs をテストする方法が記載されています。
 - 「[Orbs レジストリ](https://circleci.com/orbs/registry/licensing)」には、Orbs を使用する際の法的条件の詳細が記載されています。
-- 「[CircleCI ローカル CLI の使用]({{site.baseurl}}/ja/2.0/local-cli/#概要)」には、Orbs デプロイで CircleCI CLI を使用する方法が記載されています。
+- 「[CircleCI ローカル CLI の使用]({{site.baseurl}}/2.0/local-cli/#概要)」には、Orbs デプロイで CircleCI CLI を使用する方法が記載されています。

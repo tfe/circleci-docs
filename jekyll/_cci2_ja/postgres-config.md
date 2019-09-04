@@ -7,7 +7,7 @@ categories: [configuring-jobs]
 order: 35
 ---
 
-このページでは、PostgreSQL/Rails あるいは MySQL/Ruby という組み合わせのデータベース設定を含む、[config.yml]({{ site.baseurl }}/ja/2.0/databases/) ファイルの例について解説しています。
+このページでは、PostgreSQL/Rails あるいは MySQL/Ruby という組み合わせのデータベース設定を含む、[config.yml]({{ site.baseurl }}/2.0/databases/) ファイルの例について解説しています。
 
 * TOC
 {:toc}
@@ -132,7 +132,7 @@ jobs:
 
 ## PostgreSQL と Go 言語を使ったアプリケーションの設定例
 
-下記の設定に関する全体像やアプリケーションのパブリックリポジトリのソースは、[Go 言語ガイド]({{ site.baseurl }}/ja/2.0/language-go/)で確認できます。
+下記の設定に関する全体像やアプリケーションのパブリックリポジトリのソースは、[Go 言語ガイド]({{ site.baseurl }}/2.0/language-go/)で確認できます。
 
 ```yaml
 version: 2
@@ -245,4 +245,4 @@ jobs:
 ## 関連情報
 
 
-サービスイメージやデータベースのテストステップの使用に関するひと通りの知識を「[データベースを設定する]({{ site.baseurl }}/ja/2.0/databases/)」ページで紹介しています。
+サービスイメージやデータベースのテストステップの使用に関するひと通りの知識を「[データベースを設定する]({{ site.baseurl }}/2.0/databases/)」ページで紹介しています。

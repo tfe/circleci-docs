@@ -17,9 +17,9 @@ CircleCI プロジェクトは、関連付けられているコードリポジ�
 
 ![ヘッダー]({{ site.baseurl }}/assets/img/docs/CircleCI-2.0-setup-project-circle101.png)
 
-ユーザーは、プロジェクトを*フォロー*することで、プロジェクトの[ビルドステータス]({{ site.baseurl }}/ja/2.0/status/)に関する[メール通知]({{ site.baseurl }}/ja/2.0/notifications/)を受け取り、プロジェクトを自分の CircleCI ダッシュボードに追加できます。
+ユーザーは、プロジェクトを*フォロー*することで、プロジェクトの[ビルドステータス]({{ site.baseurl }}/2.0/status/)に関する[メール通知]({{ site.baseurl }}/2.0/notifications/)を受け取り、プロジェクトを自分の CircleCI ダッシュボードに追加できます。
 
-*プロジェクト管理者*とは、GitHub または Bitbucket リポジトリをプロジェクトとして CircleCI に追加するユーザーです。 *ユーザー*とは、組織内の個々のユーザーです。 CircleCI ユーザーとは、ユーザー名とパスワードを使用して CircleCI プラットフォームにログインできる人を指します。 関係する CircleCI プロジェクトを表示したりフォローするには、ユーザーが [GitHub または Bitbucket 組織]({{ site.baseurl }}/ja/2.0/gh-bb-integration/)に追加されている必要があります。 ユーザーは、環境変数に保存されているプロジェクトデータを表示することはできません。
+*プロジェクト管理者*とは、GitHub または Bitbucket リポジトリをプロジェクトとして CircleCI に追加するユーザーです。 *ユーザー*とは、組織内の個々のユーザーです。 CircleCI ユーザーとは、ユーザー名とパスワードを使用して CircleCI プラットフォームにログインできる人を指します。 関係する CircleCI プロジェクトを表示したりフォローするには、ユーザーが [GitHub または Bitbucket 組織]({{ site.baseurl }}/2.0/gh-bb-integration/)に追加されている必要があります。 ユーザーは、環境変数に保存されているプロジェクトデータを表示することはできません。
 
 ## ステップ
 
@@ -30,7 +30,7 @@ CircleCI プロジェクトは、関連付けられているコードリポジ�
     steps:
       - checkout # ソースコードをチェックアウトする特別なステップ
       - run: # コマンドを実行する run ステップ。以下を参照してください。
-      # circleci.com/docs/ja/2.0/configuration-reference/#run
+      # circleci.com/ja/docs/2.0/configuration-reference/#run
           name: テストを実行
           command: make test # 実行可能なコマンド。デフォルトでは、
           # /bin/bash -eo pipefail オプションを使用して
@@ -48,7 +48,7 @@ version: 2
     build1: # ジョブ名
       docker: # プライマリコンテナイメージを指定します
       # dockerhub にあるビルド済みの CircleCI イメージのリストについては、
-      # circleci.com/docs/ja/2.0/circleci-images/ を参照してください。
+      # circleci.com/ja/docs/2.0/circleci-images/ を参照してください。
         - image: buildpack-deps:trusty
 
         - image: postgres:9.4.1 # 1 つの共通ネットワーク内で実行される
@@ -57,7 +57,7 @@ version: 2
         # ポートをローカルホストで利用できます。
          environment: # POSTGRES_USER 認証環境変数を指定します。
           # 環境変数の使用方法については、
-          # circleci.com/docs/ja/2.0/env-vars/ を参照してください。
+          # circleci.com/ja/docs/2.0/env-vars/ を参照してください。
            POSTGRES_USER: root
 
 
@@ -92,7 +92,7 @@ jobs:
   build1:
     docker: # 各ジョブで Executor (docker、macos、または machine)
     # を指定する必要があります。これらの比較や他の例
-    # については、circleci.com/docs/ja/2.0/executor-types/
+    # については、circleci.com/ja/docs/2.0/executor-types/
     # を参照してください。
       - image: circleci/ruby:2.4-node
       - image: circleci/postgres:9.4.12-alpine
@@ -100,7 +100,7 @@ jobs:
       - checkout
       - save_cache: # 環境変数のキャッシュキーテンプレートを
       # 使用して、依存関係をキャッシュします。
-      # circleci.com/docs/ja/2.0/caching/ を参照してください。
+      # circleci.com/ja/docs/2.0/caching/ を参照してください。
           key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
           paths:
             - ~/circleci-demo-workflows
@@ -166,7 +166,7 @@ workflows:
       - build2:
         requires:
            - build1 # build1 ジョブが正常に完了するのを待ってから開始します。
-           # この他の例については、circleci.com/docs/ja/2.0/workflows/ を参照してください。
+           # この他の例については、circleci.com/ja/docs/2.0/workflows/ を参照してください。
       - build3:
         requires:
            - build1 # build1 ジョブが正常に完了するのを待ってから、時間を節約するために
@@ -208,7 +208,7 @@ jobs:
   build3:
 ...
     steps:
-      - store_artifacts: # 詳細については、circleci.com/docs/ja/2.0/artifacts/ を参照してください。
+      - store_artifacts: # 詳細については、circleci.com/ja/docs/2.0/artifacts/ を参照してください。
           path: /tmp/artifact-1
           destination: artifact-file
 ...
@@ -229,4 +229,4 @@ Workspace、Caches、Artifacts に関する詳細は、「[Persisting Data in Wo
 ## 関連項目
 {:.no_toc}
 
-`jobs` と `steps` のキーとオプションの使用方法については、「[Orb、ジョブ、ステップ、ワークフロー]({{ site.baseurl }}/ja/2.0/jobs-steps/)」を参照してください。
+`jobs` と `steps` のキーとオプションの使用方法については、「[Orb、ジョブ、ステップ、ワークフロー]({{ site.baseurl }}/2.0/jobs-steps/)」を参照してください。

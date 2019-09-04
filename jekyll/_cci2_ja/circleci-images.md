@@ -97,7 +97,7 @@ CircleCI のコンビニエンスイメージは、**言語**イメージと**�
 ### 言語イメージ
 {:.no_toc}
 
-言語イメージは、一般的なプログラミング言語に対応するコンビニエンスイメージです。 これらのイメージには、関連する言語と[共通して使用されるツール](#プリインストールツール)の両方が含まれます。 言語イメージは、ユーザー設定内の `docker` キーの下に最初にリストされ、実行中は[プライマリコンテナ]({{ site.baseurl }}/ja/2.0/glossary/#primary-container){:target="_blank"}になります。
+言語イメージは、一般的なプログラミング言語に対応するコンビニエンスイメージです。 これらのイメージには、関連する言語と[共通して使用されるツール](#プリインストールツール)の両方が含まれます。 言語イメージは、ユーザー設定内の `docker` キーの下に最初にリストされ、実行中は[プライマリコンテナ]({{ site.baseurl }}/2.0/glossary/#primary-container){:target="_blank"}になります。
 
 CircleCI は、以下の言語に対応するイメージを提供しています。
 
@@ -205,7 +205,7 @@ CircleCI は、サービスイメージに対してバリアント 1つのみ用
 
 `- image: circleci/{{ image[0] }}:[TAG]`
 
-**最新のタグ**<small>(すべてのイメージタグは<a href="{{ site.baseurl }}/ja/2.0/docker-image-tags.json">こちら</a>{:target="_blank"})</small>
+**最新のタグ**<small>(すべてのイメージタグは<a href="{{ site.baseurl }}/2.0/docker-image-tags.json">こちら</a>{:target="_blank"})</small>
 
 <ul class="list-3cols">
 {% assign tags = image[1].tags | sort | reverse %}
@@ -223,7 +223,7 @@ CircleCI は、サービスイメージに対してバリアント 1つのみ用
 {% endfor %}
 </ul>
 
-メモ：このイメージで使用可能なバリアントは、上記のタグにバリアントタグを追加することで使用できます。 すべてのイメージタグは[こちら]({{ site.baseurl }}/ja/2.0/docker-image-tags.json){:target="_blank"}で確認できます。
+メモ：このイメージで使用可能なバリアントは、上記のタグにバリアントタグを追加することで使用できます。 すべてのイメージタグは[こちら]({{ site.baseurl }}/2.0/docker-image-tags.json){:target="_blank"}で確認できます。
 
 * * *
 
@@ -232,4 +232,4 @@ CircleCI は、サービスイメージに対してバリアント 1つのみ用
 ## 関連項目
 {:.no_toc}
 
-プライベートリポジトリまたは Amazon ECR にあるイメージの使用をビルドに承認する方法については、[プライベートイメージの使用]({{ site.baseurl }}/ja/2.0/private-images/)を参照してください。
+プライベートリポジトリまたは Amazon ECR にあるイメージの使用をビルドに承認する方法については、[プライベートイメージの使用]({{ site.baseurl }}/2.0/private-images/)を参照してください。

@@ -17,7 +17,7 @@ order: 8
 
 {:.no_toc}
 
-お急ぎの場合は、以下の設定例をプロジェクトの root ディレクトリにある [`.circleci/config.yml`]({{ site.baseurl }}/ja/2.0/configuration-reference/) にコピーし、ビルドを開始してください。
+お急ぎの場合は、以下の設定例をプロジェクトの root ディレクトリにある [`.circleci/config.yml`]({{ site.baseurl }}/2.0/configuration-reference/) にコピーし、ビルドを開始してください。
 
 CircleCI は、以下のページで Ruby on Rails サンプルプロジェクトを提供しています。
 
@@ -28,7 +28,7 @@ CircleCI は、以下のページで Ruby on Rails サンプルプロジェク�
 
 このアプリケーションでは、最新の安定した Rails バージョン 5.1 (`rspec-rails`)、[RspecJunitFormatter](https://github.com/sj26/rspec_junit_formatter)、および PostgreSQL データベースを使用しています。
 
-このアプリケーションのビルドには、ビルド済み [CircleCI Docker イメージ](http://circleci.com/docs/ja/2.0/circleci-images)の 1つを使用しています。
+このアプリケーションのビルドには、ビルド済み [CircleCI Docker イメージ](http://circleci.com/ja/docs/2.0/circleci-images)の 1つを使用しています。
 
 ## CircleCI のビルド済み Docker イメージ
 
@@ -71,7 +71,7 @@ jobs: # ステップの集合
           command: bundle -v
 
       # バンドルキャッシュを復元します
-      # 依存関係キャッシュについては https://circleci.com/docs/ja/2.0/caching/ をお読みください
+      # 依存関係キャッシュについては https://circleci.com/ja/docs/2.0/caching/ をお読みください
 
       - restore_cache:
           keys:
@@ -126,9 +126,9 @@ jobs: # ステップの集合
 
       # タイミング解析のテスト結果を保存します
 
-      - store_test_results: # テストサマリー (https://circleci.com/docs/ja/2.0/collect-test-data/) に表示するテスト結果をアップロードします
+      - store_test_results: # テストサマリー (https://circleci.com/ja/docs/2.0/collect-test-data/) に表示するテスト結果をアップロードします
           path: test_results
-      # デプロイコンフィグの例については https://circleci.com/docs/ja/2.0/deployment-integrations/ を参照してください
+      # デプロイコンフィグの例については https://circleci.com/ja/docs/2.0/deployment-integrations/ を参照してください
 ```
 
 {% endraw %}
@@ -147,7 +147,7 @@ CircleCI を初めて使用する際は、プロジェクトをご自身でビ�
 
 ## 設定の詳細
 
-`config.yml` は必ず [`version`]({{ site.baseurl }}/ja/2.0/configuration-reference/#version) キーから始まります。 このキーは、互換性を損なう変更に関する警告を表示するために使用されます。
+`config.yml` は必ず [`version`]({{ site.baseurl }}/2.0/configuration-reference/#version) キーから始まります。 このキーは、互換性を損なう変更に関する警告を表示するために使用されます。
 
 ```yaml
 version: 2
@@ -186,7 +186,7 @@ jobs:
           POSTGRES_PASSWORD: ""
 ```
 
-この例では、以下の 2つの [CircleCI コンビニエンスイメージ]({{ site.baseurl }}/ja/2.0/circleci-images/#イメージのタイプ)が使用されています。
+この例では、以下の 2つの [CircleCI コンビニエンスイメージ]({{ site.baseurl }}/2.0/circleci-images/#イメージのタイプ)が使用されています。
 
 * Debian Jessie 上で実行され、Ruby 2.4.2 と Node.js をインストールする言語イメージ
 
@@ -263,7 +263,7 @@ steps:
 
 {% endraw %}
 
-次のセクションでは、テストデータベースを設定します。 ここでは、`dockerize` [ユーティリティ](https://github.com/jwilder/dockerize)を使用して、データベースサービスが使用可能になるまで[プライマリコンテナ]({{ site.baseurl }}/ja/2.0/glossary/#primary-container)のメイン処理の開始を遅らせています。
+次のセクションでは、テストデータベースを設定します。 ここでは、`dockerize` [ユーティリティ](https://github.com/jwilder/dockerize)を使用して、データベースサービスが使用可能になるまで[プライマリコンテナ]({{ site.baseurl }}/2.0/glossary/#primary-container)のメイン処理の開始を遅らせています。
 
 ```yaml
 steps:
@@ -316,13 +316,13 @@ RSpec テストスイートには、以下の 2つのフォーマッタが指定
 
 `--profile` オプションは、各実行の最も遅い例を報告します。
 
-`circleci tests glob` コマンドと `circleci tests split` コマンドの詳細については、[CircleCI CLI による並列処理に関するドキュメント](https://circleci.com/docs/ja/2.0/parallelism-faster-jobs)を参照してください。
+`circleci tests glob` コマンドと `circleci tests split` コマンドの詳細については、[CircleCI CLI による並列処理に関するドキュメント](https://circleci.com/ja/docs/2.0/parallelism-faster-jobs)を参照してください。
 
 ## 関連項目
 
 {:.no_toc}
 
-デプロイターゲットの設定例については、「[デプロイの設定]({{ site.baseurl }}/ja/2.0/deployment-integrations/)」を参照してください。
+デプロイターゲットの設定例については、「[デプロイの設定]({{ site.baseurl }}/2.0/deployment-integrations/)」を参照してください。
 
 このアプリケーションは Ruby on Rails Web アプリケーションの最も単純な設定例であり、実際のプロジェクトはこれよりも複雑です。このため、独自のプロジェクトを設定する際は、以下のサイトのさらに詳細な実際のアプリの例が参考になります。
 

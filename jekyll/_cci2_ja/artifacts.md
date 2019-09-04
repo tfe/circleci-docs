@@ -122,7 +122,7 @@ CircleCI がジョブを実行すると、**[Job (ジョブ)] ページ**の [Ar
 
 `curl` を使用してアーティファクトをダウンロードするには、以下の手順を実行します。
 
-1. [パーソナル API トークンを作成]({{ site.baseurl }}/ja/2.0/managing-api-tokens/#creating-a-personal-api-token)し、クリップボードにコピーします。
+1. [パーソナル API トークンを作成]({{ site.baseurl }}/2.0/managing-api-tokens/#creating-a-personal-api-token)し、クリップボードにコピーします。
 
 2. ターミナルウィンドウで、アーティファクトを保存するディレクトリに `cd` します。
 
@@ -157,4 +157,4 @@ curl https://circleci.com/api/v1.1/project/:vcs-type/:username/:project/$build_n
 ## 関連項目
 {:.no_toc}
 
-[依存関係のキャッシュ]({{ site.baseurl }}/ja/2.0/caching/)
+[依存関係のキャッシュ]({{ site.baseurl }}/2.0/caching/)

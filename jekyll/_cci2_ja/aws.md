@@ -56,7 +56,7 @@ Platinum サポート契約では、パフォーマンスの向上のために�
 ### Nomad クライアント
 {:no_toc}
 
-Nomad クライアントマシンは、Services マシンによってスケジュールされた CircleCI ジョブを実行します。 デフォルトの[リソースクラス]({{site.baseurl}}/ja/2.0/configuration-reference/#resource_class)の 1 クライアントに対する CPU、RAM、およびディスク容量の最小要件は以下のとおりです。
+Nomad クライアントマシンは、Services マシンによってスケジュールされた CircleCI ジョブを実行します。 デフォルトの[リソースクラス]({{site.baseurl}}/2.0/configuration-reference/#resource_class)の 1 クライアントに対する CPU、RAM、およびディスク容量の最小要件は以下のとおりです。
 
 - CPU：4コア
 - RAM：16 GB
@@ -97,7 +97,7 @@ AWS でのプライベートサブネットの使用を CircleCI でサポート
 - [S3 用 VPC エンドポイント](https://aws.amazon.com/jp/blogs/aws/new-vpc-endpoint-for-amazon-s3/)を有効にする必要があります。 S3 用 VPC エンドポイントを有効にすると、CircleCI およびサブネット内の他のノードに対する S3 操作が大幅に改善します。
 - 高負荷のネットワーク操作に対しては NAT インスタンスを適切に強化します。 デプロイの仕様によっては、Docker および外部ネットワークリソースを使用した高度並列ビルドによって NAT インスタンスが制約を受ける可能性があります。 不適切な NAT によってネットワーク操作やキャッシュ操作が低速化するおそれがあります。
 - <a href=」https://github.com">github.com</a> と連携する場合、ネットワークのアクセス制御リスト (ACL) のホワイトリストに GitHub Webhook のポート 80 および 443 が含まれていることを確認します。 GitHub と連携する場合は、CircleCI をパブリックサブネット内に準備するか、パブリックロードバランサーを使用して github.com トラフィックを転送するように設定します。
-- CircleCI インストールのインスタンスにアクセスできる必要のあるポートの詳細については、「[管理者向け概要]({{site.baseurl}}/ja/2.0/overview#services)」の「Services」セクションを参照してください。
+- CircleCI インストールのインスタンスにアクセスできる必要のあるポートの詳細については、「[管理者向け概要]({{site.baseurl}}/2.0/overview#services)」の「Services」セクションを参照してください。
 
 <!--- Check whether the ACL needs to be more open so the services/build can download build images -->
 
@@ -172,17 +172,17 @@ AWS でのプライベートサブネットの使用を CircleCI でサポート
 8. ライセンスを入力します。
 9. 管理コンソールの GitHub 連携セクション内の指示に従って、GitHub.com に CircleCI を新しい OAuth アプリケーションとして登録します。
 
-- **メモ：**「Unknown error authenticating via GitHub. Try again, or contact us.」というメッセージが表示された場合は、ホームページ URL とコールバック URL で `https:` の代わりに `http:` を使用してみてください。 8. GitHub からクライアント ID をコピーし、GitHub アプリケーションクライアント ID の入力フィールドにペーストします。 9. GitHub からシークレットをコピーし、GitHub アプリケーションクライアントシークレットの入力フィールドにペーストして、[Test Authentication (認証のテスト)] をクリックします。 10. `Storage` セクションを完了します。 ベストプラクティスとして、認証にはインスタンスプロファイルを使用することをお勧めします (追加の設定は必要ありません)。 11. [リモートの Docker]({{site.baseurl}}/ja/2.0/building-docker-images/) または `machine` Executor 機能の使用を計画している場合、vm-service を構成します (後からでも構成できます)。 ここでも、認証用のインスタンスプロファイルの使用をお勧めします (追加の設定は必要ありません)。 12. 設定を適用すると、管理コンソールダッシュボードにリダイレクトされます。 必要な Docker コンテナすべてをダウンロードするまで数分がかかります。 管理コンソールで `Failure reported from operator: no such image` が報告された場合、[Start (スタート)] を再クリックすると続行できます。 13. アプリケーションが起動されたら、CircleCI にログインし、2.0 ビルドの実行を開始します。 14. [realitycheck レポート](https://github.com/circleci/realitycheck)を使用して、基本的な CircleCI 機能を検査できます。
+- **メモ：**「Unknown error authenticating via GitHub. Try again, or contact us.」というメッセージが表示された場合は、ホームページ URL とコールバック URL で `https:` の代わりに `http:` を使用してみてください。 8. GitHub からクライアント ID をコピーし、GitHub アプリケーションクライアント ID の入力フィールドにペーストします。 9. GitHub からシークレットをコピーし、GitHub アプリケーションクライアントシークレットの入力フィールドにペーストして、[Test Authentication (認証のテスト)] をクリックします。 10. `Storage` セクションを完了します。 ベストプラクティスとして、認証にはインスタンスプロファイルを使用することをお勧めします (追加の設定は必要ありません)。 11. [リモートの Docker]({{site.baseurl}}/2.0/building-docker-images/) または `machine` Executor 機能の使用を計画している場合、vm-service を構成します (後からでも構成できます)。 ここでも、認証用のインスタンスプロファイルの使用をお勧めします (追加の設定は必要ありません)。 12. 設定を適用すると、管理コンソールダッシュボードにリダイレクトされます。 必要な Docker コンテナすべてをダウンロードするまで数分がかかります。 管理コンソールで `Failure reported from operator: no such image` が報告された場合、[Start (スタート)] を再クリックすると続行できます。 13. アプリケーションが起動されたら、CircleCI にログインし、2.0 ビルドの実行を開始します。 14. [realitycheck レポート](https://github.com/circleci/realitycheck)を使用して、基本的な CircleCI 機能を検査できます。
 
 ## インストールのバリデーション
 
 1. ダッシュボードで [Open (開く)] リンクをクリックして CircleCI アプリケーションに移動します。CircleCI アプリケーションの起動中には開始ページが数分間表示され、その後自動的にホームページにリダイレクトされます。
 2. [Get Started (開始)] ボタンをクリックして登録またはサインインします。 最初にログインしたユーザーなので、管理者になります。
-3. [Hello World]({{site.baseurl}}/ja/2.0/hello-world/) ページを使用してプロジェクトを追加します。
+3. [Hello World]({{site.baseurl}}/2.0/hello-world/) ページを使用してプロジェクトを追加します。
 
 ## トラブルシューティング
 
-最初のビルドが正常に実行されない場合は、CircleCI の[トラブルシューティング]({{site.baseurl}}/ja/2.0/troubleshooting/)ガイドや、「[Nomad クラスタの動作の概要]({{site.baseurl}}/ja/2.0/nomad/)」ドキュメントを参照し、ビルダのステータスを調べる方法を確認してください。
+最初のビルドが正常に実行されない場合は、CircleCI の[トラブルシューティング]({{site.baseurl}}/2.0/troubleshooting/)ガイドや、「[Nomad クラスタの動作の概要]({{site.baseurl}}/2.0/nomad/)」ドキュメントを参照し、ビルダのステータスを調べる方法を確認してください。
 
 ビルドコンテナが起動し、イメージのダウンロードが完了すると、直ちに最初のビルドが開始されます。
 

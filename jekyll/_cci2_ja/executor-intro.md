@@ -40,4 +40,4 @@ order: 1
 
 ## 関連項目
 
-ビルド済み CircleCI コンビニエンスイメージの詳細については、[こちら]({{ site.baseurl }}/ja/2.0/circleci-images/)を参照してください。
+ビルド済み CircleCI コンビニエンスイメージの詳細については、[こちら]({{ site.baseurl }}/2.0/circleci-images/)を参照してください。

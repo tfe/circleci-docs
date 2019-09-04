@@ -16,8 +16,8 @@ order: 1
 
 サンプル名 | 内容 | リンク 
 ----|----------|-------- 
-サンプル `config.yml` ファイル | パラレル Workflow、シーケンシャル Workflow、Fan-in / Fan-out Workflow の 4 種類のサンプル `config.yml` ファイルです。1 つの設定ファイルで Linux と iOS のアプリのビルドに対応します。 | [`config.yml`]({{ site.baseurl }}/ja/2.0/sample-config/) 
-データベース設定の例 | PostgreSQL/Rails、Go/PostgreSQL、Ruby/MySQL の各組み合わせで利用する際の `config.yml` を用意しています。 | [サンプル設定ファイル]({{ site.baseurl }}/ja/2.0/postgres-config/) 
+サンプル `config.yml` ファイル | パラレル Workflow、シーケンシャル Workflow、Fan-in / Fan-out Workflow の 4 種類のサンプル `config.yml` ファイルです。1 つの設定ファイルで Linux と iOS のアプリのビルドに対応します。 | [`config.yml`]({{ site.baseurl }}/2.0/sample-config/) 
+データベース設定の例 | PostgreSQL/Rails、Go/PostgreSQL、Ruby/MySQL の各組み合わせで利用する際の `config.yml` を用意しています。 | [サンプル設定ファイル]({{ site.baseurl }}/2.0/postgres-config/) 
 パラレルジョブ | パラレルジョブの Workflow 設定の例です。 | [parallel-jobs/.circleci/config.yml](https://github.com/CircleCI-Public/circleci-demo-workflows/blob/parallel-jobs/.circleci/config.yml) 
 シーケンシャルジョブ | シーケンシャルジョブの Workflow 設定の例です。 | [sequential-branch-filter/.circleci/config.yml](https://github.com/CircleCI-Public/circleci-demo-workflows/blob/sequential-branch-filter/.circleci/config.yml) 
 Fan-in／Fan-out ジョブ | 最初はシーケンシャル、次にパラレル、最後に再びシーケンシャルでジョブを処理する Workflow 設定の例です。 | [fan-in-fan-out/.circleci/config.yml](https://github.com/CircleCI-Public/circleci-demo-workflows/blob/fan-in-fan-out/.circleci/config.yml) 
@@ -69,4 +69,4 @@ Scala および `sbt` を用いた 3 パターンの Workflow によるビルド
 
 ## 関連情報
 
-[チュートリアルとサンプルアプリ]({{ site.baseurl }}/ja/2.0/tutorials/)もご覧ください。このページでは 11 のプログラム言語で作成された基礎的なアプリケーションについて、コメントや細かな解説がついたひと通りのサンプル設定ファイルを用意しています。
+[チュートリアルとサンプルアプリ]({{ site.baseurl }}/2.0/tutorials/)もご覧ください。このページでは 11 のプログラム言語で作成された基礎的なアプリケーションについて、コメントや細かな解説がついたひと通りのサンプル設定ファイルを用意しています。

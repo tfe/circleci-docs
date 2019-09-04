@@ -68,7 +68,7 @@ jobs:
 
 3. **echo :** これは、`config.yml` に含まれる唯一の他の命令です。CircleCI は echo コマンドを実行し、「A first hello」という入力を与えました ([echo](https://linux.die.net/man/1/echo) コマンドは、入力された文字列をそのまま出力します)。
 
-今のところはリポジトリにソースコードが含まれておらず、`config.yml` 内にもテストに関わる設定が含まれていませんが、CircleCI はビルドに「成功」したものとして扱います ([exit コード](https://en.wikipedia.org/wiki/Exit_status)としては 0 を返しているため)。 ほとんどのプロジェクトは、これよりはるかに複雑で、多くの場合は複数の Docker イメージと複数のステップが存在し、多くのテストも含まれます。 `config.yml` ファイルに記述できる全てのステップの詳細については、[CircleCI の設定方法](https://circleci.com/docs/ja/2.0/configuration-reference)を参照してください。
+今のところはリポジトリにソースコードが含まれておらず、`config.yml` 内にもテストに関わる設定が含まれていませんが、CircleCI はビルドに「成功」したものとして扱います ([exit コード](https://en.wikipedia.org/wiki/Exit_status)としては 0 を返しているため)。 ほとんどのプロジェクトは、これよりはるかに複雑で、多くの場合は複数の Docker イメージと複数のステップが存在し、多くのテストも含まれます。 `config.yml` ファイルに記述できる全てのステップの詳細については、[CircleCI の設定方法](https://circleci.com/ja/docs/2.0/configuration-reference)を参照してください。
 
 ### ビルドを意図的に失敗させる
 {:.no_toc}
@@ -132,7 +132,7 @@ workflows:
 
 5. Workflow のリンクをクリックすると、2 つのジョブが並列実行されていることを確認できます。![]({{ site.baseurl }}/assets/img/docs/inside-workflows-circle-101-running.png)
 
-Workflows の詳細については「[Workflows の制御](https://circleci.com/docs/ja/2.0/workflows/#overview)」ドキュメントを参照してください。
+Workflows の詳細については「[Workflows の制御](https://circleci.com/ja/docs/2.0/workflows/#overview)」ドキュメントを参照してください。
 
 ### Workspaces 機能を使ってみる
 {:.no_toc}
@@ -182,7 +182,7 @@ workflows:
             - one
 ```
 
-Workspaces の詳細については、[こちら](https://circleci.com/docs/ja/2.0/workflows/#using-workspaces-to-share-data-among-jobs)を参照してください。
+Workspaces の詳細については、[こちら](https://circleci.com/ja/docs/2.0/workflows/#using-workspaces-to-share-data-among-jobs)を参照してください。
 
 ### SSH での{% comment %} TODO: Job {% endcomment %}ビルドへの接続
 {:.no_toc}

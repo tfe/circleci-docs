@@ -18,7 +18,7 @@ order: 40
 
 **メモ：**fastlane match を使用して CircleCI 2.0 上でコード署名を設定するには、CircleCI プロジェクトに*ユーザーキーを追加*する必要があります。 コード署名の設定は、CircleCI 1.0 の場合とは大きく異なります。2.0 ではコード署名に CircleCI アプリを使用する必要がなく、以下のコンフィグ手順を実施するだけで設定が完了します。この 2.0 ドキュメントはその点を踏まえて作成されています。
 
-CircleCI 2.0 上で iOS プロジェクトまたは Mac プロジェクトをまだ設定していない場合、「[macOS 上の iOS アプリケーションのテスト]({{ site.baseurl }}/ja/2.0/testing-ios/)」で設定手順を確認できます。
+CircleCI 2.0 上で iOS プロジェクトまたは Mac プロジェクトをまだ設定していない場合、「[macOS 上の iOS アプリケーションのテスト]({{ site.baseurl }}/2.0/testing-ios/)」で設定手順を確認できます。
 
 ## fastlane match の設定
 

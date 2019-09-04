@@ -39,18 +39,18 @@ Workflows のステータスは下記のうちいずれかの値をとります�
 - FAILED：Workflow 内の 1 つ以上のジョブが失敗しました。
 - SUCCESS：Workflow 内のすべてのジョブが問題なく完了しました。
 - ON HOLD：Workflow 内のジョブ実行が承認待ちの状態です。
-- NEEDS SETUP：そのプロジェクトの [config.yml file]({{ site.baseurl }}/ja/2.0/configuration-reference/) ファイルに Workflow の記述がないか、内容に誤りがあります。
+- NEEDS SETUP：そのプロジェクトの [config.yml file]({{ site.baseurl }}/2.0/configuration-reference/) ファイルに Workflow の記述がないか、内容に誤りがあります。
 
 ### 制限について
 {:.no_toc}
 
-プロジェクトの設定にある Advanced Settings で [[Enable build processing]]({{ site.baseurl }}/ja/2.0/build-processing/) を有効にすると、Workflows の実行トリガーに CircleCI API を利用できるようにもなります。 反対に [Enable build processing] を有効にしていないプロジェクトについては、Workflows は API 経由で実行されることはありません。 **注 :** Workflows を使わずにビルドするには `build` ジョブを使います。
+プロジェクトの設定にある Advanced Settings で [[Enable build processing]]({{ site.baseurl }}/2.0/build-processing/) を有効にすると、Workflows の実行トリガーに CircleCI API を利用できるようにもなります。 反対に [Enable build processing] を有効にしていないプロジェクトについては、Workflows は API 経由で実行されることはありません。 **注 :** Workflows を使わずにビルドするには `build` ジョブを使います。
 
-こうした制限に関する詳細については [FAQ]({{ site.baseurl }}/ja/2.0/faq) をご確認ください。
+こうした制限に関する詳細については [FAQ]({{ site.baseurl }}/2.0/faq) をご確認ください。
 
 ## Workflows の設定例
 
-`workflows` *キーに関する細かな仕様は、CircleCI 設定マニュアルの [Workflows]({{ site.baseurl }}/ja/2.0/configuration-reference/#workflows) で説明しています。*
+`workflows` *キーに関する細かな仕様は、CircleCI 設定マニュアルの [Workflows]({{ site.baseurl }}/2.0/configuration-reference/#workflows) で説明しています。*
 
 **注 :** Workflows で構成されたプロジェクトは通常、Docker イメージ、環境変数、`run` ステップなど、いくつかの構文に分けて記述された複数のジョブからなります。`.circleci/config.yml` のコードをコンパクトにまとめられるエイリアスの使い方や構文の再利用方法については [YAML Anchors/Aliases](http://yaml.org/spec/1.2/spec.html#id2765878) でご確認ください。 [CircleCI の設定における YAML ファイルの再利用](https://circleci.com/blog/circleci-hacks-reuse-yaml-in-your-circleci-config-with-yaml/)というブログ投稿の内容も参考にしてください。
 
@@ -270,7 +270,7 @@ Cron のステップ値 (`*/1` や `*/20` など) には **対応していませ
 所定のブランチの実行ルールを定義する内容とします。
 
 詳しくは
-[CircleCI 設定リファレンス]({{ site.baseurl }}/ja/2.0/configuration-reference/#branches-1)ページの `branches` を参照してください。
+[CircleCI 設定リファレンス]({{ site.baseurl }}/2.0/configuration-reference/#branches-1)ページの `branches` を参照してください。
 
 実際の設定サンプルは
 [Sample Scheduled Workflows configuration](https://github.com/CircleCI-Public/circleci-demo-workflows/blob/try-schedule-workflow/.circleci/config.yml) で確認できます。
@@ -282,7 +282,7 @@ Cron のステップ値 (`*/1` や `*/20` など) には **対応していませ
 ### 環境変数を共有するジョブコンテキストを使う
 {:.no_toc}
 
-下記は、環境変数の共有を可能にするコンテキストを使った 4 つのシーケンシャルジョブを含む Workflow の例です。 詳しい設定の手順は[コンテキスト]({{ site.baseurl }}/ja/2.0/contexts)で確認できます。
+下記は、環境変数の共有を可能にするコンテキストを使った 4 つのシーケンシャルジョブを含む Workflow の例です。 詳しい設定の手順は[コンテキスト]({{ site.baseurl }}/2.0/contexts)で確認できます。
 
 下記に示した `config.yml` のコードは、`org-global` コンテキストで定義したリソースを使う構成にした、シーケンシャルジョブの例です。
 
@@ -586,9 +586,9 @@ GitHub リポジトリのブランチに実装済みの Workflows があり、�
 ## 関連情報
 {:.no_toc}
 
-- CircleCI 1.0 の `circle.yml` ファイルから CircleCI 2.0 の `.circleci/config.yml` ファイルへ移行する際の Workflow の設定方法を知りたい場合は、2.0 移行マニュアルの [Workflows の設定の手順]({{ site.baseurl }}/ja/2.0/migrating-from-1-2/)をご覧ください。
+- CircleCI 1.0 の `circle.yml` ファイルから CircleCI 2.0 の `.circleci/config.yml` ファイルへ移行する際の Workflow の設定方法を知りたい場合は、2.0 移行マニュアルの [Workflows の設定の手順]({{ site.baseurl }}/2.0/migrating-from-1-2/)をご覧ください。
 
-- Workflows に関するよくある質問は、FAQ の [Workflow]({{ site.baseurl }}/ja/2.0/faq) を参照してください。
+- Workflows に関するよくある質問は、FAQ の [Workflow]({{ site.baseurl }}/2.0/faq) を参照してください。
 
 - Workflows を使ったデモアプリは、GitHub の [CircleCI Demo Workflows](https://github.com/CircleCI-Public/circleci-demo-workflows) で入手できます。
 

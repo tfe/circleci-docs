@@ -15,7 +15,7 @@ order: 40
 ## はじめに
 {:.no_toc}
 
-プロジェクトへのプライベート環境変数の追加は、CircleCI 上のプロジェクトごとの設定ページにある、**Environment Variables** で行えます。 環境変数にセットした実際の値は、ここでいったん設定すると、CircleCI 上では参照も編集もできません。 環境変数の値を変えたいときは、現在の環境変数を削除してから改めて別の値で作成し直してください。 環境変数は個別に追加したり、あるいは他のプロジェクトで定義している変数をインポートして追加できます。 また、プライベート環境変数は公開プロジェクトでも隠しておくことが可能です。これに関連する設定については[オープンソースプロジェクトのビルド方法]({{ site.baseurl }}/ja/2.0/oss/)をご覧ください。
+プロジェクトへのプライベート環境変数の追加は、CircleCI 上のプロジェクトごとの設定ページにある、**Environment Variables** で行えます。 環境変数にセットした実際の値は、ここでいったん設定すると、CircleCI 上では参照も編集もできません。 環境変数の値を変えたいときは、現在の環境変数を削除してから改めて別の値で作成し直してください。 環境変数は個別に追加したり、あるいは他のプロジェクトで定義している変数をインポートして追加できます。 また、プライベート環境変数は公開プロジェクトでも隠しておくことが可能です。これに関連する設定については[オープンソースプロジェクトのビルド方法]({{ site.baseurl }}/2.0/oss/)をご覧ください。
 
 ### 環境変数使用時のオプション
 {:.no_toc}
@@ -28,16 +28,16 @@ CircleCI にセキュアに格納されるシークレットキー・プライ�
 2. [`run` ステップ内](#ステップ内で環境変数を設定する) で `environment` キーを使って宣言されたもの。
 3. [jobs](#ジョブ内で環境変数を設定する) 内において `environment` キーで定義したもの。
 4. [コンテナ](#コンテナ内で環境変数を設定する)において `environment` キーで定義したもの。
-5. コンテキスト環境変数 (コンテキストを利用している場合)。詳細は[Contexts]({{ site.baseurl }}/ja/2.0/contexts/)を参照。
+5. コンテキスト環境変数 (コンテキストを利用している場合)。詳細は[Contexts]({{ site.baseurl }}/2.0/contexts/)を参照。
 6. プロジェクト設定ページで設定した[プロジェクトレベル環境変数](#プロジェクト内で環境変数を設定する)。
 7. [CircleCI の定義済み環境変数](#定義済み環境変数)で解説している特殊な環境変数。
 
 `FOO=bar make install` のような形で `run step` 内のシェルコマンドで宣言された環境変数は、`environment` キーや `contexts` キーで宣言された環境変数を上書きします。 コンテキストページで追加された環境変数はプロジェクト設定ページで追加されたものより優先して使われます。 一番最後に参照されるのは CircleCI の特殊な定義済み環境変数です。
 
 **注：**
-`.circleci/config.yml` ファイルでは隠したい環境変数を宣言しないようにしてください。そのプロジェクトにアクセスできるエンジニア全員が `config.yml` ファイルの全文を見ることができます。 隠したい環境変数は CircleCI の[プロジェクト](#プロジェクト内で環境変数を設定する)設定や[Contexts]({{ site.baseurl }}/ja/2.0/contexts/)設定で登録するようにしてください。 詳しくは「セキュリティ」ページの[暗号化]({{ site.baseurl }}/ja/2.0/security/#encryption)で解説しています。
+`.circleci/config.yml` ファイルでは隠したい環境変数を宣言しないようにしてください。そのプロジェクトにアクセスできるエンジニア全員が `config.yml` ファイルの全文を見ることができます。 隠したい環境変数は CircleCI の[プロジェクト](#プロジェクト内で環境変数を設定する)設定や[Contexts]({{ site.baseurl }}/2.0/contexts/)設定で登録するようにしてください。 詳しくは「セキュリティ」ページの[暗号化]({{ site.baseurl }}/2.0/security/#encryption)で解説しています。
 
-設定ファイルでスクリプトを実行した場合も、隠し環境変数が明らかになってしまう可能性があります。 スクリプトのセキュアな活用方法については、[シェルスクリプトの使い方]({{ site.baseurl }}/ja/2.0/using-shell-scripts/#shell-script-best-practices)ページでご確認ください。
+設定ファイルでスクリプトを実行した場合も、隠し環境変数が明らかになってしまう可能性があります。 スクリプトのセキュアな活用方法については、[シェルスクリプトの使い方]({{ site.baseurl }}/2.0/using-shell-scripts/#shell-script-best-practices)ページでご確認ください。
 
 <a name="using-bash_env-to-set-environment-variables"></a>
 ### `BASH_ENV` で環境変数を定義する
@@ -93,7 +93,7 @@ jobs:
 
 ## ステップ内で環境変数を設定する
 
-ステップ内で環境変数を設定するには [`environment` キー]({{ site.baseurl }}/ja/2.0/configuration-reference/#run)を使います。
+ステップ内で環境変数を設定するには [`environment` キー]({{ site.baseurl }}/2.0/configuration-reference/#run)を使います。
 
 ```yaml
 version: 2
@@ -116,7 +116,7 @@ jobs:
 
 ## ジョブ内で環境変数を設定する
 
-ジョブの中で環境変数を設定するには [`environment` キー]({{ site.baseurl }}/ja/2.0/configuration-reference/#job_name)を使います。
+ジョブの中で環境変数を設定するには [`environment` キー]({{ site.baseurl }}/2.0/configuration-reference/#job_name)を使います。
 
 ```yaml
 version: 2
@@ -131,7 +131,7 @@ jobs:
 <a name="setting-an-environment-variable-in-a-container"></a>
 ## コンテナ内で環境変数を設定する
 
-コンテナの中で環境変数を設定するには [`environment` キー]({{ site.baseurl }}/ja/2.0/configuration-reference/#docker--machine--macosexecutor)を使います。
+コンテナの中で環境変数を設定するには [`environment` キー]({{ site.baseurl }}/2.0/configuration-reference/#docker--machine--macosexecutor)を使います。
 
 ```yaml
 version: 2
@@ -163,7 +163,7 @@ jobs:
 
 ## Context内で環境変数を設定する
 
-Contextを作成することで複数のプロジェクト間で環境変数の共有が可能になります。 Contextで環境変数を設定する方法は[Contextのドキュメント]({{ site.baseurl }}/ja/2.0/contexts/)をご覧ください。
+Contextを作成することで複数のプロジェクト間で環境変数の共有が可能になります。 Contextで環境変数を設定する方法は[Contextのドキュメント]({{ site.baseurl }}/2.0/contexts/)をご覧ください。
 
 <a name="setting-an-environment-variable-in-a-project"></a>
 ## プロジェクト内で環境変数を設定する
@@ -174,7 +174,7 @@ Contextを作成することで複数のプロジェクト間で環境変数の�
 
 3. **Import Variables** ボタンをクリックすると他のプロジェクトで定義している変数をインポートできます。 また、**Add Variable** ボタンをクリックすると変数を手動で新規追加できます。 (**注：** **Import Variables** ボタンは、プライベートクラウドやデータセンターにインストールした CircleCI では現在利用できません。)
 
-4. `.circleci/config.yml` に新しい環境変数を追加します。 詳しくは [Heroku のデプロイ手順]({{ site.baseurl }}/ja/2.0/deployment-integrations/#heroku)を参照してください。
+4. `.circleci/config.yml` に新しい環境変数を追加します。 詳しくは [Heroku のデプロイ手順]({{ site.baseurl }}/2.0/deployment-integrations/#heroku)を参照してください。
 
 環境変数を作ると CircleCI の設定ページ上では変数値が伏せ字になり、書き換えることはできません。環境変数の値を変更するには、いったん削除してから改めて作成してください。
 
@@ -261,7 +261,7 @@ curl \
   https://circleci.com/api/v1.1/project/github/circleci/mongofinil/tree/master?circle-token=$CIRCLE_TOKEN
 ```
 
-ここで使われている `$CIRCLE_TOKEN` は [パーソナル API トークン]({{ site.baseurl }}/ja/2.0/managing-api-tokens/#creating-a-personal-api-token)です。
+ここで使われている `$CIRCLE_TOKEN` は [パーソナル API トークン]({{ site.baseurl }}/2.0/managing-api-tokens/#creating-a-personal-api-token)です。
 
 ビルド時には下記のような環境変数となります。
 
@@ -303,7 +303,7 @@ API の呼び出しは POST リクエストで実行します。詳細は API �
 `CIRCLE_PULL_REQUESTS` | List | 現在のビルドのプルリクエストにひもづけられたカンマ区切りの URL リスト。
 `CIRCLE_REPOSITORY_URL` | String | GitHub または Bitbucket の リポジトリ URL。
 `CIRCLE_SHA1` | String | 現在のビルドの最後のコミットに関する SHA1 ハッシュ。
-`CIRCLE_TAG` | String | 現在のビルドがタグ付けされている場合の git タグの名前。 詳しくは [Git タグを使ったジョブの実行]({{ site.baseurl }}/ja/2.0/workflows/#git-タグに対応可能な-workflows-を実行する)を参照してください。
+`CIRCLE_TAG` | String | 現在のビルドがタグ付けされている場合の git タグの名前。 詳しくは [Git タグを使ったジョブの実行]({{ site.baseurl }}/2.0/workflows/#git-タグに対応可能な-workflows-を実行する)を参照してください。
 `CIRCLE_USERNAME` | String | ビルドをスタートさせたユーザーの GitHub または Bitbucket ユーザー名。
 `CIRCLE_WORKFLOW_ID` | String | 現在のジョブにおける Workflow インスタンスのユニーク ID。 この ID は Workflow インスタンス内のすべてのジョブで同一となります。
 `CIRCLE_WORKING_DIRECTORY` | String | 現在のジョブの`working_directory` キーの値。
@@ -314,4 +314,4 @@ API の呼び出しは POST リクエストで実行します。詳細は API �
 ## 関連情報
 {:.no_toc}
 
-[Contexts]( {{ site.baseurl }}/ja/2.0/contexts/)
+[Contexts]( {{ site.baseurl }}/2.0/contexts/)
