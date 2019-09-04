@@ -112,6 +112,9 @@ jobs:
           name: Build the Jekyll site
           command: bundle exec jekyll build --config jekyll/_config.yml,jekyll/_config_production.yml --source jekyll --destination jekyll/_site/docs/ 2>&1 | tee $JOB_RESULTS_PATH/build-results.txt
       - run:
+          name: Build the Jekyll site (Japanese)
+          command: bundle exec jekyll build --config jekyll/_config.yml,jekyll/_config_production.yml,jekyll/_config_ja.yml --source jekyll --destination jekyll/_site/docs/ja/ 2>&1 | tee -a $JOB_RESULTS_PATH/build-results.txt
+      - run:
           name: Test with HTMLproofer
           command: bundle exec htmlproofer jekyll/_site --allow-hash-href --check-favicon --check-html --disable-external --empty-alt-ignore | tee $JOB_RESULTS_PATH/htmlproofer-results.txt
       - store_artifacts:
@@ -151,8 +154,19 @@ jobs:
       - attach_workspace:
           at: ./generated-site
       - run:
-          name: Deploy to S3 if tests pass and branch is Master
+          name: Move JA site build into production subdirectory (by default, circleci.com/docs/ja, we want circleci.com/ja/docs)
+          command: |
+            cd generated-site
+            mkdir -p ja/docs
+            mv docs/ja/* ja/docs/
+            cp -rfv ja/docs/ja/* ja/docs/
+            rm -r ja/docs/ja/*
+      - run:
+          name: Upload main docs site build
           command: aws s3 sync generated-site/docs s3://circle-production-static-site/docs/ --delete
+      - run:
+          name: Upload Japanese docs site build
+          command: aws s3 sync generated-site/ja/docs s3://circle-production-static-site/ja/docs/ --delete
 
 workflows:
   version: 2
