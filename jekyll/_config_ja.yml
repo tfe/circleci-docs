@@ -1,6 +1,9 @@
 baseurl: "/ja/docs"
 
 collections:
+  cci2:
+    # Turn this off because we output the JA version onto the same path this would use
+    output: false
   cci2_ja:
     name: "2.0 Docs"
     site_section: true
