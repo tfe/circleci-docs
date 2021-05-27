@@ -61,7 +61,7 @@
         <aside class="table-of-contents">
           <h5 class="toc-heading">On this page </h5>
           <div class="toc-indent">
-            {% include toc.html html=content h_max=4 %}
+            {{ content | toc_only }}
           </div>
         </aside>
         {% endif %}

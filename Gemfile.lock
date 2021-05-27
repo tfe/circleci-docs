@@ -117,6 +117,9 @@ GEM
     jekyll-target-blank (2.0.0)
       jekyll (>= 3.0, < 5.0)
       nokogiri (~> 1.10)
+    jekyll-toc (0.17.1)
+      jekyll (>= 3.9)
+      nokogiri (~> 1.11)
     jekyll-watch (2.2.1)
       listen (~> 3.0)
     json (2.5.1)
@@ -213,6 +216,7 @@ DEPENDENCIES
   jekyll-include-cache
   jekyll-sitemap
   jekyll-target-blank
+  jekyll-toc
   kramdown-parser-gfm
   liquid-c
   pronto
